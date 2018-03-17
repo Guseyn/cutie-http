@@ -1,0 +1,24 @@
+{
+  "name": "cutie-http",
+  "version": "1.0.0",
+  "description": "Cutie extension for http module in Node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guseyn/cutie-http.git"
+  },
+  "keywords": [
+    "cutie",
+    "http",
+    "oop"
+  ],
+  "author": "guseyn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Guseyn/cutie-http/issues"
+  },
+  "homepage": "https://github.com/Guseyn/cutie-http#readme"
+}
