@@ -5,15 +5,15 @@ const AsyncObject = require('@guseyn/cutie').AsyncObject;
 // Represented result is number
 class MaxFreeSocketsOfAgent extends AsyncObject {
 
-	constructor(agent) {
-		super(agent);
-	}
+  constructor(agent) {
+    super(agent);
+  }
 
-	definedSyncCall() {
-		return (agent) => {
-			return agent.maxFreeSockets;
-		};
-	}
+  definedSyncCall() {
+    return (agent) => {
+      return agent.maxFreeSockets;
+    };
+  }
 
 }
 
