@@ -2,7 +2,7 @@
 
 const AsyncObject = require('@guseyn/cutie').AsyncObject;
 
-// Represented result is void
+// Represented result is request
 class RequestWithTimeout extends AsyncObject {
 
   constructor(request, timeout) {
@@ -11,8 +11,12 @@ class RequestWithTimeout extends AsyncObject {
 
   definedAsyncCall() {
     return (request, timeout, callback) => {
-      request.setTimeout(timeout, callback);
+      this.request = request.setTimeout(timeout, callback);
     };
+  }
+
+  onResult() {
+  	return this.request;
   }
 
 }
