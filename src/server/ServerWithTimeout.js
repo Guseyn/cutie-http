@@ -17,4 +17,4 @@ class ServerWithTimeout extends AsyncObject {
 
 }
 
-module.exports = ServerWithSetTimeout;
+module.exports = ServerWithTimeout;
