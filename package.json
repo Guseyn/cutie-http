@@ -16,7 +16,7 @@
     "oop"
   ],
   "dependencies": {
-    "@guseyn/cutie": "1.0.9"
+    "@guseyn/cutie": "1.1.4"
   },
   "author": "guseyn",
   "license": "MIT",

@@ -9,15 +9,12 @@ class ListeningServer extends AsyncObject {
     super(server, ...args);
   }
 
-  definedAsyncCall() {
+  definedSyncCall() {
     return (server, ...args) => {
-    	this.server = server.listen(...args);
+    	return server.listen(...args);
     };
   }
 
-  onResult() {
-  	return this.server;
-  }
 
 }
 
