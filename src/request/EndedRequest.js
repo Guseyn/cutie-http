@@ -17,7 +17,7 @@ class EndedReqest extends AsyncObject {
   }
 
   onResult() {
-  	return this.request;
+    return this.request;
   }
 
 }

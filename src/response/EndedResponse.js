@@ -12,12 +12,12 @@ class EndedResponse extends AsyncObject {
 
   definedAsyncCall() {
     return (response, data, encoding, callback) => {
-    	response.end(data, encoding, callback);
+      response.end(data, encoding, callback);
     };
   }
 
   onResult() {
-  	return this.response;
+    return this.response;
   }
 
 }

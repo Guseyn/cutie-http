@@ -11,7 +11,7 @@ class HttpRequest extends AsyncObject {
   }
 
   definedSyncCall() {
-  	return http.request;
+    return http.request;
   }
 
 }

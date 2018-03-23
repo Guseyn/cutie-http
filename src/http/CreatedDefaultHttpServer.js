@@ -11,9 +11,9 @@ class CreatedDefaultHttpServer extends AsyncObject {
   }
 
   definedSyncCall() {
-  	return (requestListener) => {
-  		return http.createServer(requestListener);
-  	}
+    return (requestListener) => {
+      return http.createServer(requestListener);
+    }
   }
 
 }

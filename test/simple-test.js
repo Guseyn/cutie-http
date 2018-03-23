@@ -7,61 +7,62 @@ const ListeningServer = require('./../src/server/ListeningServer');
 
 class LoggedRequestResponse extends AsyncObject {
 
-	constructor(request, response) {
-		super(request, response);
-	}
+  constructor(request, response) {
+    super(request, response);
+  }
 
-	definedSyncCall() {
-		return (request, response) => {
-			console.log('request is recieved, response will be ready soon...');
-			return;
-		}
-	}
+  definedSyncCall() {
+    return (request, response) => {
+      console.log('request is recieved, response will be ready soon...');
+      return;
+    }
+  }
 
 }
 
 class LoggedConnectedServer extends AsyncObject {
-	
-	constructor() {
-		super();
-	}
+  
+  constructor() {
+    super();
+  }
 
-	definedSyncCall() {
-		return () => {
-			console.log('listening...');
-			return;
-		}
-	}
+  definedSyncCall() {
+    return () => {
+      console.log('listening...');
+      return;
+    }
+  }
 
 }
 
 class RequestResponseEvent extends Event {
 
-	constructor() {
-		super();
-	}
+  constructor() {
+    super();
+  }
 
-	definedBody(request, response) {
-		return new LoggedRequestResponse(request, response);
-	}
+  definedBody(request, response) {
+    return new LoggedRequestResponse(request, response);
+  }
 
 }
 
 class ServerListeningEvent extends Event {
 
-	constructor() {
-		super();
-	}
+  constructor() {
+    super();
+  }
 
-	definedBody() {
-		return new LoggedConnectedServer();
-	}
+  definedBody() {
+    return new LoggedConnectedServer();
+  }
 
 }
 
-	new ListeningServer(
-		new CreatedDefaultHttpServer(
-			new RequestResponseEvent().listen()
-		), 4200, '127.0.0.1',
-		new ServerListeningEvent().listen()
-	).call();
+//usage
+new ListeningServer(
+  new CreatedDefaultHttpServer(
+    new RequestResponseEvent().listen()
+  ), 4200, '127.0.0.1',
+  new ServerListeningEvent().listen()
+).call();

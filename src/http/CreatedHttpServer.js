@@ -11,7 +11,7 @@ class CreatedHttpServer extends AsyncObject {
   }
 
   definedSyncCall() {
-  	return http.createServer;
+    return http.createServer;
   }
 
 }

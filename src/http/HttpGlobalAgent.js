@@ -11,7 +11,7 @@ class HttpGlobalAgent extends AsyncObject {
   }
 
   definedSyncCall() {
-  	return http.globalAgent;
+    return http.globalAgent;
   }
 
 }
