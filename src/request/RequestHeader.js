@@ -17,4 +17,4 @@ class RequestHeader extends AsyncObject {
 
 }
 
-module.exports = RequestWithFlushedHeaders;
+module.exports = RequestHeader;

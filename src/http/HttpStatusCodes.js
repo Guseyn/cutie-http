@@ -18,4 +18,4 @@ class HttpStatusCodes extends AsyncObject {
 
 }
 
-module.exports = HttpMethods;
+module.exports = HttpStatusCodes;

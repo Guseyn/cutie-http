@@ -16,4 +16,4 @@ class HttpGetRequest extends AsyncObject {
 
 }
 
-module.exports = HttpGetServer;
+module.exports = HttpGetRequest;

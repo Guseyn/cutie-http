@@ -18,4 +18,4 @@ class ResponseWithRemovedHeader extends AsyncObject {
 
 }
 
-module.exports = HasResponseHeader;
+module.exports = ResponseWithRemovedHeader;

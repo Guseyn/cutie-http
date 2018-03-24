@@ -18,4 +18,4 @@ class ServerWithRequestEvent extends AsyncObject {
 
 }
 
-module.exports = ServerWithConnectionEvent;
+module.exports = ServerWithRequestEvent;

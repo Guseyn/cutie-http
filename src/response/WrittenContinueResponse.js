@@ -18,4 +18,4 @@ class WrittenContinueResponse extends AsyncObject {
 
 }
 
-module.exports = WrittenResponse;
+module.exports = WrittenContinueResponse;
