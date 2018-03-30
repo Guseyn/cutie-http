@@ -42,7 +42,7 @@ class RequestResponseEvent extends Event {
   }
 
   definedBody(request, response) {
-    return new LoggedRequestResponse(request, response).call();
+    new LoggedRequestResponse(request, response).call();
   }
 
 }
@@ -54,7 +54,7 @@ class ServerListeningEvent extends Event {
   }
 
   definedBody() {
-    return new LoggedConnectedServer().call();
+    new LoggedConnectedServer().call();
   }
 
 }
@@ -62,7 +62,7 @@ class ServerListeningEvent extends Event {
 //usage
 new ListeningServer(
   new CreatedDefaultHttpServer(
-    new RequestResponseEvent().listen()
+    new RequestResponseEvent()
   ), 4200, '127.0.0.1',
-  new ServerListeningEvent().listen()
+  new ServerListeningEvent()
 ).call();
