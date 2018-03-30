@@ -1,6 +1,6 @@
 {
   "name": "@guseyn/cutie-http",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Cutie extension for http module in Node",
   "main": "index.js",
   "scripts": {
