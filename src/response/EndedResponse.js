@@ -6,7 +6,7 @@ const AsyncObject = require('@guseyn/cutie').AsyncObject;
 class EndedResponse extends AsyncObject {
 
   constructor(response, data, encoding) {
-    super(response, data, encoding);
+    super(response, data, encoding || 'utf8');
     this.response = response;
   }
 
