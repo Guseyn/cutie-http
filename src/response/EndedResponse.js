@@ -7,12 +7,12 @@ class EndedResponse extends AsyncObject {
 
   constructor(response, data, encoding) {
     super(response, data, encoding || 'utf8');
-    this.response = response;
   }
 
   definedAsyncCall() {
     return (response, data, encoding, callback) => {
       response.end(data, encoding, callback);
+      this.response = response;
     };
   }
 

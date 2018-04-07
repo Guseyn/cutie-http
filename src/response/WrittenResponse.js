@@ -7,12 +7,12 @@ class WrittenResponse extends AsyncObject {
 
   constructor(response, chunk, encoding) {
     super(response, chunk, encoding || 'utf8');
-    this.response = response;
   }
 
   definedAsyncCall() {
     return (response, chunk, encoding, callback) => {
     	response.write(chunk, encoding, callback);
+      this.response = response;
     };
   }
 

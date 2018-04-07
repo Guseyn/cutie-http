@@ -7,12 +7,12 @@ class WrittenRequest extends AsyncObject {
 
   constructor(request, chunk, encoding) {
     super(request, chunk, encoding);
-    this.request = request;
   }
 
   definedAsyncCall() {
     return (request, chunk, encoding, callback) => {
       request.write(chunk, encoding, callback);
+      this.request = request;
     };
   }
 

@@ -7,12 +7,12 @@ class ClosedServer extends AsyncObject {
 
   constructor(server) {
     super(server);
-    this.server = server;
   }
 
   definedAsyncCall() {
     return (server, callback) => {
     	server.close(callback);
+      this.server = server;
     };
   }
 
