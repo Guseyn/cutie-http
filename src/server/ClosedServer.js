@@ -11,13 +11,13 @@ class ClosedServer extends AsyncObject {
 
   definedAsyncCall() {
     return (server, callback) => {
-    	server.close(callback);
+      server.close(callback);
       this.server = server;
     };
   }
 
   onResult() {
-  	return this.server;
+    return this.server;
   }
 
 }
