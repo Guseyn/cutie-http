@@ -6,7 +6,7 @@ const AsyncObject = require('@guseyn/cutie').AsyncObject;
 class ResponseWithWrittenHead extends AsyncObject {
 
   constructor(response, statusCode, statusMessage, headers) {
-    super(response, statusCode);
+    super(response, statusCode, statusMessage, headers);
   }
 
   definedSyncCall() {
