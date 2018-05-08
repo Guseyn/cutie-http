@@ -42,6 +42,7 @@ class RequestResponseEvent extends Event {
   }
 
   definedBody(request, response) {
+    // endless request
     new LoggedRequestResponse(request, response).call();
   }
 
