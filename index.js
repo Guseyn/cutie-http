@@ -1,5 +1,6 @@
 module.exports = {
 
+  CreatedAgentConnection: require('./src/agent/CreatedAgentConnection'),
   DestroyedAgent: require('./src/agent/DestroyedAgent'),
   KeptSocketAliveOfAgent: require('./src/agent/KeptSocketAliveOfAgent'),
   MaxFreeSocketsOfAgent: require('./src/agent/MaxFreeSocketsOfAgent'),
@@ -7,7 +8,6 @@ module.exports = {
   NameOfAgent: require('./src/agent/NameOfAgent'),
   RequestsOfAgent: require('./src/agent/RequestsOfAgent'),
   ReusedSocketOfAgent: require('./src/agent/ReusedSocketOfAgent'),
-  SocketOfCreatedAgentConnection: require('./src/agent/SocketOfCreatedAgentConnection'),
   SocketsOfAgent: require('./src/agent/SocketsOfAgent'),
 
   CreatedDefaultHttpServer: require('./src/http/CreatedDefaultHttpServer'),

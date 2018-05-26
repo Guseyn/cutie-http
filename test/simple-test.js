@@ -61,9 +61,9 @@ class ServerListeningEvent extends Event {
 }
 
 //usage
-new ListeningServer(
+/*new ListeningServer(
   new CreatedDefaultHttpServer(
     new RequestResponseEvent()
   ), 4200, '127.0.0.1',
   new ServerListeningEvent()
-).call();
+).call();*/

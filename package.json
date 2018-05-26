@@ -4,7 +4,7 @@
   "description": "Cutie extension for http module in Node",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test-executor"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,11 @@
     "oop"
   ],
   "dependencies": {
-    "@guseyn/cutie": "1.3.4"
+    "@guseyn/cutie": "1.3.7",
+    "@guseyn/cutie-assert": "1.0.9",
+    "@guseyn/cutie-is": "1.0.1",
+    "@guseyn/cutie-stream": "1.0.4",
+    "test-executor": "1.0.8"
   },
   "author": "guseyn",
   "license": "MIT",

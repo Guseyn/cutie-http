@@ -3,7 +3,7 @@
 const AsyncObject = require('@guseyn/cutie').AsyncObject;
 
 // Represented result is stream/socket
-class SocketOfCreatedAgentConnection extends AsyncObject {
+class CreatedAgentConnection extends AsyncObject {
 
   constructor(agent, options) {
     super(agent, options);
@@ -11,10 +11,14 @@ class SocketOfCreatedAgentConnection extends AsyncObject {
 
   definedAsyncCall() {
     return (agent, options, callback) => {
-      agent.createConnection(options, callback);
+      this.socket = agent.createConnection(options, callback);
     };
+  }
+
+  onResult(socket) {
+    return this.socket;
   }
 
 }
 
-module.exports = SocketOfCreatedAgentConnection;
+module.exports = CreatedAgentConnection;
