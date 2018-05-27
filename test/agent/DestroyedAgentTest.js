@@ -39,10 +39,10 @@ FakeServer(port).as('server').after(
       ).as('socket'), Socket
     )
   ).after(
-    //new DestroyedStream(as('socket')).after(
-      new DestroyedAgent(agent).after(
+    new DestroyedStream(as('socket')).after(
+      //new DestroyedAgent(agent).after(
         new ClosedServer(as('server'))
-      )
-    //)
+      //)
+    )
   )
 ).call();
