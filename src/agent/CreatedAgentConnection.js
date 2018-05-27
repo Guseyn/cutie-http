@@ -12,7 +12,7 @@ class CreatedAgentConnection extends AsyncObject {
   definedAsyncCall() {
     return (agent, options, callback) => {
       this.socket = agent.createConnection(options, callback);
-    };
+    }
   }
 
   onResult(socket) {

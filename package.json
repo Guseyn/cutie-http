@@ -19,7 +19,8 @@
     "@guseyn/cutie": "1.3.7",
     "@guseyn/cutie-assert": "1.0.9",
     "@guseyn/cutie-is": "1.0.1",
-    "@guseyn/cutie-stream": "1.0.4",
+    "@guseyn/cutie-stream": "1.0.6",
+    "@guseyn/cutie-object": "1.0.0",
     "test-executor": "1.0.8"
   },
   "author": "guseyn",

@@ -20,7 +20,8 @@ const {
 } = require('@guseyn/cutie-stream');
 const {
   CreatedAgentConnection,
-  ClosedServer
+  ClosedServer,
+  DestroyedAgent
 } = require('./../../index');
 const {
   FakeServer
@@ -29,6 +30,7 @@ const {
 const agent = new Agent({ keepAlive: true });
 const port = 8000;
 
+// TODO: Investigate how to do this properly
 FakeServer(port).as('server').after(
   new Assertion(
     new Is(
@@ -37,8 +39,10 @@ FakeServer(port).as('server').after(
       ).as('socket'), Socket
     )
   ).after(
-    new DestroyedStream(as('socket')).after(
-      new ClosedServer(as('server'))
-    )
+    //new DestroyedStream(as('socket')).after(
+      new DestroyedAgent(agent).after(
+        new ClosedServer(as('server'))
+      )
+    //)
   )
 ).call();
