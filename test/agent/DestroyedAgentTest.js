@@ -19,6 +19,11 @@ const {
   DestroyedStream
 } = require('@guseyn/cutie-stream');
 const {
+  FoundProcessOnPort,
+  Pid,
+  KilledProcess
+} = require('@guseyn/cutie-process');
+const {
   CreatedAgentConnection,
   ClosedServer,
   DestroyedAgent
@@ -28,21 +33,27 @@ const {
 } = require('./../../fake');
 
 const agent = new Agent({ keepAlive: true });
-const port = 8000;
+const port = 8001;
 
 // TODO: Investigate how to do this properly
-FakeServer(port).as('server').after(
-  new Assertion(
-    new Is(
-      new CreatedAgentConnection(
-        agent, {port: port}
-      ).as('socket'), Socket
-    )
-  ).after(
-    new DestroyedStream(as('socket')).after(
-      //new DestroyedAgent(agent).after(
-        new ClosedServer(as('server'))
-      //)
+new KilledProcess(
+  new Pid(
+    new FoundProcessOnPort(port)
+  ), 'SIGHUP'
+).after(
+  FakeServer(port).as('server').after(
+    new Assertion(
+      new Is(
+        new CreatedAgentConnection(
+          agent, {port: port}
+        ).as('socket'), Socket
+      )
+    ).after(
+      new DestroyedStream(as('socket')).after(
+        //new DestroyedAgent(agent).after(
+          new ClosedServer(as('server'))
+        //)
+      )
     )
   )
 ).call();
