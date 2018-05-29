@@ -7,10 +7,10 @@ const {
   Socket
 } = require('net');
 const {
-  as
+  as, AsyncObject, Event
 } = require('@guseyn/cutie');
 const {
-  Assertion
+  Assertion, EqualAssertion
 } = require('@guseyn/cutie-assert');
 const {
   Is
@@ -24,9 +24,15 @@ const {
   KilledProcess
 } = require('@guseyn/cutie-process');
 const {
+  HasOwnProperty
+} = require('@guseyn/cutie-object');
+const {
   CreatedAgentConnection,
   ClosedServer,
-  DestroyedAgent
+  DestroyedAgent,
+  HttpRequest,
+  EndedRequest,
+  SocketsOfAgent
 } = require('./../../index');
 const {
   FakeServer
@@ -34,8 +40,57 @@ const {
 
 const agent = new Agent({ keepAlive: true });
 const port = 8001;
+const hostname = '127.0.0.1';
+const options = {
+  hostname: hostname,
+  port: port,
+  path: '/',
+  method: 'GET',
+  agent: agent
+};
 
-// TODO: Investigate how to do this properly
+class GeneratedRequestCallback extends AsyncObject {
+
+  constructor(agent, socket, server, key) {
+    super(agent, socket, server, key);
+  }
+
+  definedSyncCall() {
+    return (agent, socket, server, key) => {
+      return (res) => {
+        new EqualAssertion(
+          new HasOwnProperty(
+            new SocketsOfAgent(agent), key
+          ), true
+        ).after(
+          new DestroyedAgent(agent).after(
+            new EqualAssertion(
+              new HasOwnProperty(
+                new SocketsOfAgent(agent), key
+              ), true 
+              /* 
+                it's strange behavior, but DestroyedAgent works, because connection don't hang.
+                If you try this test without DestroyedAgent, the test will run a long time.
+              */
+            ).after(
+              new DestroyedStream(socket).after(
+                new ClosedServer(server).after(
+                  new EqualAssertion(
+                    new HasOwnProperty(
+                      new SocketsOfAgent(agent), key
+                    ), false
+                  )
+                )
+              )
+            )
+          )
+        ).call();
+      }
+    }
+  }
+
+}
+
 new KilledProcess(
   new Pid(
     new FoundProcessOnPort(port)
@@ -49,10 +104,12 @@ new KilledProcess(
         ).as('socket'), Socket
       )
     ).after(
-      new DestroyedStream(as('socket')).after(
-        //new DestroyedAgent(agent).after(
-          new ClosedServer(as('server'))
-        //)
+      new EndedRequest(
+        new HttpRequest(
+          options, new GeneratedRequestCallback(
+            agent, as('socket'), as('server'), `${hostname}:${port}:`
+          )
+        )
       )
     )
   )
