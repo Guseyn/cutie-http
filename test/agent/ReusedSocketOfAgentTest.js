@@ -32,14 +32,14 @@ const {
   DestroyedAgent,
   HttpRequest,
   EndedRequest,
-  SocketsOfAgent
+  ReusedSocketOfAgent
 } = require('./../../index');
 const {
   FakeServer
 } = require('./../../fake');
 
 const agent = new Agent({ keepAlive: true });
-const port = 8001;
+const port = 8007;
 const hostname = '127.0.0.1';
 const options = {
   hostname: hostname,
@@ -51,38 +51,16 @@ const options = {
 
 class GeneratedRequestCallback extends AsyncObject {
 
-  constructor(agent, socket, server, key) {
-    super(agent, socket, server, key);
+  constructor(agent, socket, server) {
+    super(agent, socket, server);
   }
 
   definedSyncCall() {
-    return (agent, socket, server, key) => {
+    return (agent, socket, server) => {
       return (res) => {
-        new EqualAssertion(
-          new HasOwnProperty(
-            new SocketsOfAgent(agent), key
-          ), true
-        ).after(
-          new DestroyedAgent(agent).after(
-            new EqualAssertion(
-              new HasOwnProperty(
-                new SocketsOfAgent(agent), key
-              ), true 
-              /* 
-                It's strange behavior. But DestroyedAgent works because connection don't hang.
-                If you try this test without DestroyedAgent, the test will run a long time.
-              */
-            ).after(
-              new DestroyedStream(socket).after(
-                new ClosedServer(server).after(
-                  new EqualAssertion(
-                    new HasOwnProperty(
-                      new SocketsOfAgent(agent), key
-                    ), false
-                  )
-                )
-              )
-            )
+        new DestroyedAgent(agent).after(
+          new DestroyedStream(socket).after(
+            new ClosedServer(server)
           )
         ).call();
       }
@@ -104,11 +82,18 @@ new KilledProcess(
         ).as('socket'), Socket
       )
     ).after(
-      new EndedRequest(
-        new HttpRequest(
-          options, new GeneratedRequestCallback(
-            agent, as('socket'), as('server'), `${hostname}:${port}:`
-          )
+      new Assertion(
+        new Is(
+          new ReusedSocketOfAgent(
+            agent, as('socket'),
+            new EndedRequest(
+              new HttpRequest(
+                options, new GeneratedRequestCallback(
+                  agent, as('socket'), as('server')
+                )
+              )
+            )
+          ), Socket
         )
       )
     )

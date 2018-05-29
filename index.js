@@ -6,7 +6,6 @@ module.exports = {
   MaxFreeSocketsOfAgent: require('./src/agent/MaxFreeSocketsOfAgent'),
   MaxSocketsOfAgent: require('./src/agent/MaxSocketsOfAgent'),
   NameOfAgent: require('./src/agent/NameOfAgent'),
-  OptionsWithAgent: require('./src/agent/OptionsWithAgent'),
   RequestsOfAgent: require('./src/agent/RequestsOfAgent'),
   ReusedSocketOfAgent: require('./src/agent/ReusedSocketOfAgent'),
   SocketsOfAgent: require('./src/agent/SocketsOfAgent'),
