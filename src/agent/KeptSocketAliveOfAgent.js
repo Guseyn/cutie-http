@@ -6,12 +6,12 @@ const AsyncObject = require('@guseyn/cutie').AsyncObject;
 class KeptSocketAliveOfAgent extends AsyncObject {
 
   constructor(agent, socket) {
-    super(agent, soket);
+    super(agent, socket);
   }
 
   definedSyncCall() {
     return (agent, socket) => {
-      agent.keepSocketAlive(sokcet);
+      agent.keepSocketAlive(socket);
       return socket;
     };
   }
