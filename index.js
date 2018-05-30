@@ -10,13 +10,9 @@ module.exports = {
   ReusedSocketOfAgent: require('./src/agent/ReusedSocketOfAgent'),
   SocketsOfAgent: require('./src/agent/SocketsOfAgent'),
 
-  CreatedDefaultHttpServer: require('./src/http/CreatedDefaultHttpServer'),
   CreatedHttpServer: require('./src/http/CreatedHttpServer'),
   HttpGetRequest: require('./src/http/HttpGetRequest'),
-  HttpGlobalAgent: require('./src/http/HttpGlobalAgent'),
-  HttpMethods: require('./src/http/HttpMethods'),
   HttpRequest: require('./src/http/HttpRequest'),
-  HttpStatusCodes: require('./src/http/HttpStatusCodes'),
 
   DestroyedIncomingMessage: require('./src/incoming-message/DestroyedIncomingMessage'),
   HeadersOfIncomingMessage: require('./src/incoming-message/HeadersOfIncomingMessage'),
