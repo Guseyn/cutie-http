@@ -33,7 +33,7 @@ const {
 } = require('./../../fake');
 
 const agent = new Agent({ keepAlive: false });
-const port = 8006;
+const port = 8008;
 
 new KilledProcess(
   new Pid(
