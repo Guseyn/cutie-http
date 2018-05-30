@@ -1,7 +1,6 @@
 'use strict'
 
 const {
-  Server,
   IncomingMessage
 } = require('http');
 const {
@@ -21,13 +20,14 @@ const {
 const {
   ClosedServer,
   HttpRequest,
-  EndedRequest
+  EndedRequest,
+  IncomingMessageWithAbortEvent
 } = require('./../../index');
 const {
   FakeServer
 } = require('./../../fake');
 
-const port = 8011;
+const port = 8015;
 const hostname = '127.0.0.1';
 const options = {
   hostname: hostname,
@@ -35,6 +35,18 @@ const options = {
   path: '/',
   method: 'GET'
 };
+
+class AbortEvent extends Event {
+
+  constructor() {
+    super();
+  }
+
+  definedBody() {
+    // handle
+  }
+
+}
 
 class GeneratedRequestCallback extends AsyncObject {
 
@@ -46,13 +58,12 @@ class GeneratedRequestCallback extends AsyncObject {
     return (server) => {
       return (res) => {
         new Assertion(
-          new Is(res, IncomingMessage)
-        ).after(
-          new Assertion(
-            new Is(server, Server)
-          ).after(
-            new ClosedServer(server)
+          new Is(
+            new IncomingMessageWithAbortEvent(res, new AbortEvent()),
+            IncomingMessage
           )
+        ).after(
+          new ClosedServer(server)
         ).call();
       }
     }

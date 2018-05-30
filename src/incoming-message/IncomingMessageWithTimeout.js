@@ -9,6 +9,7 @@ class IncomingMessageWithTimeout extends AsyncObject {
     super(message, msecs, callback);
   }
 
+  // callback can be an Event
   definedSyncCall() {
     return (message, msecs, callback) => {
       return message.setTimeout(msecs, callback);

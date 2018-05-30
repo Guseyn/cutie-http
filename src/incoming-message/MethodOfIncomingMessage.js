@@ -2,7 +2,7 @@
 
 const AsyncObject = require('@guseyn/cutie').AsyncObject;
 
-// Represented result is string
+// Represented result is string | null
 class MethodOfIncomingMessage extends AsyncObject {
 
   constructor(message) {
