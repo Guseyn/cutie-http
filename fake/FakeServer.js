@@ -5,7 +5,8 @@ const {
 } = require('@guseyn/cutie');
 const {
   CreatedHttpServer,
-  ListeningServer
+  ListeningServer,
+  EndedResponse
 } = require('./../index');
 
 class RequestResponseEvent extends Event {
@@ -16,15 +17,15 @@ class RequestResponseEvent extends Event {
 
   definedBody(request, response) {
     // handle request
-    response.end(`fake respond`);
+    new EndedResponse(response, 'fake respond').call();
   }
 
 }
 
-module.exports = (port, host) => {
+module.exports = (port, host, event) => {
   return new ListeningServer(
     new CreatedHttpServer(
-      new RequestResponseEvent()
+      event || new RequestResponseEvent()
     ), port || 8124, host || '127.0.0.1'
   );
 }

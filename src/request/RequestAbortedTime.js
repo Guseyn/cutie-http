@@ -12,7 +12,7 @@ class RequestAbortedTime extends AsyncObject {
   definedSyncCall() {
     return (request) => {
       return request.aborted;
-    };
+    }
   }
 
 }
