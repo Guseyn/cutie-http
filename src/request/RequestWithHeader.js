@@ -3,7 +3,7 @@
 const AsyncObject = require('@guseyn/cutie').AsyncObject;
 
 // Represented result is request
-class RequestWithSetHeader extends AsyncObject {
+class RequestWithHeader extends AsyncObject {
 
   constructor(request, name, value) {
     super(request, name, value);
@@ -18,4 +18,4 @@ class RequestWithSetHeader extends AsyncObject {
 
 }
 
-module.exports = RequestWithSetHeader;
+module.exports = RequestWithHeader;
