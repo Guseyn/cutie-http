@@ -17,7 +17,7 @@ class RequestResponseEvent extends Event {
 
   definedBody(request, response) {
     // handle request
-    new EndedResponse(response, 'fake respond').call();
+    new EndedResponse(response, 'fake response').call();
   }
 
 }
