@@ -9,6 +9,7 @@ class ServerWithCheckContinueEvent extends AsyncObject {
     super(server, event);
   }
 
+  // event is an Event with definedBody(req, res)
   definedSyncCall() {
     return (server, event) => {
       server.on('checkContinue', event);

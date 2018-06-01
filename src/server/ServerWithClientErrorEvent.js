@@ -9,6 +9,7 @@ class ServerWithClientErrorEvent extends AsyncObject {
     super(server, event);
   }
 
+  // event is an Event with definedBody(exception, socket)
   definedSyncCall() {
     return (server, event) => {
       server.on('clientError', event);

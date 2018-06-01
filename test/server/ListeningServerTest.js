@@ -1,11 +1,11 @@
 'use strict'
 
 const {
-  ServerResponse
+  Server
 } = require('http');
 const {
   as, AsyncObject, Event
-}  = require('@guseyn/cutie');
+} = require('@guseyn/cutie');
 const {
   Assertion
 } = require('@guseyn/cutie-assert');
@@ -13,22 +13,15 @@ const {
   Is
 } = require('@guseyn/cutie-is');
 const {
-  FoundProcessOnPort,
-  Pid,
-  KilledProcess
-} = require('@guseyn/cutie-process');
-const {
-  WrittenResponse,
-  HttpRequest,
+  CreatedHttpServer,
+  ListeningServer,
   EndedRequest,
   EndedResponse,
+  HttpRequest,
   ClosedServer
 } = require('./../../index');
-const {
-  FakeServer
-} = require('./../../fake');
 
-const port = 8070;
+const port = 8074;
 const hostname = '127.0.0.1';
 const options = {
   hostname: hostname,
@@ -43,15 +36,9 @@ class RequestResponseEvent extends Event {
     super();
   }
 
-  definedBody(req, res) {
-    new Assertion(
-      new Is(
-        new EndedResponse(
-          new WrittenResponse(res, 'fake'), ' response'
-        ), ServerResponse
-      )
-    ).call();
-    
+  definedBody(request, response) {
+    // handle request
+    new EndedResponse(response, 'fake response').call();
   }
 
 }
@@ -72,19 +59,19 @@ class GeneratedRequestCallback extends AsyncObject {
 
 }
 
-new KilledProcess(
-  new Pid(
-    new FoundProcessOnPort(port)
-  ), 'SIGHUP'
+new Assertion(
+  new Is(
+    new ListeningServer(
+      new CreatedHttpServer(
+        new RequestResponseEvent()
+      ), port, hostname
+    ).as('server'), Server
+  )
 ).after(
-  FakeServer(
-    port, hostname, new RequestResponseEvent()
-  ).as('server').after(
-    new EndedRequest(
-      new HttpRequest(
-        options, new GeneratedRequestCallback(
-          as('server')
-        )
+  new EndedRequest(
+    new HttpRequest(
+      options, new GeneratedRequestCallback(
+        as('server')
       )
     )
   )
