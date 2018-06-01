@@ -11,7 +11,8 @@ class MaxHeadersCountOfServer extends AsyncObject {
 
   definedSyncCall() {
     return (server) => {
-    	return server.maxHeadersCountOfServer;
+      console.log(server);
+    	return server.maxHeadersCount;
     };
   }
 

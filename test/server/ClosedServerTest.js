@@ -1,7 +1,7 @@
 'use strict'
 
 const {
-  ServerResponse
+  Server
 } = require('http');
 const {
   as, AsyncObject, Event
@@ -18,7 +18,6 @@ const {
   KilledProcess
 } = require('@guseyn/cutie-process');
 const {
-  WrittenResponse,
   HttpRequest,
   EndedRequest,
   EndedResponse,
@@ -28,7 +27,7 @@ const {
   FakeServer
 } = require('./../../fake');
 
-const port = 8070;
+const port = 8071;
 const hostname = '127.0.0.1';
 const options = {
   hostname: hostname,
@@ -44,14 +43,9 @@ class RequestResponseEvent extends Event {
   }
 
   definedBody(req, res) {
-    new Assertion(
-      new Is(
-        new EndedResponse(
-          new WrittenResponse(res, 'fake'), ' response'
-        ), ServerResponse
-      )
+    new EndedResponse(
+      res, 'fake response'
     ).call();
-    
   }
 
 }
@@ -65,7 +59,11 @@ class GeneratedRequestCallback extends AsyncObject {
   definedSyncCall() {
     return (server) => {
       return (res) => {
-        new ClosedServer(server).call();
+        new Assertion(
+          new Is(
+            new ClosedServer(server), Server
+          )
+        ).call();
       }
     }
   }
