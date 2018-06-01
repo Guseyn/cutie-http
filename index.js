@@ -50,7 +50,6 @@ module.exports = {
   RequestWithTimeoutEvent: require('./src/request/RequestWithTimeoutEvent'),
   RequestWithUpgradeEvent: require('./src/request/RequestWithUpgradeEvent'),
   SocketOfRequest: require('./src/request/SocketOfRequest'),
-  UrlOfRequest: require('./src/request/UrlOfRequest'),
   WrittenRequest: require('./src/request/WrittenRequest'),
 
   ConnectionOfResponse: require('./src/response/ConnectionOfResponse'),

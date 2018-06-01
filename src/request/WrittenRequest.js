@@ -6,7 +6,7 @@ const AsyncObject = require('@guseyn/cutie').AsyncObject;
 class WrittenRequest extends AsyncObject {
 
   constructor(request, chunk, encoding) {
-    super(request, chunk, encoding);
+    super(request, chunk, encoding || 'utf8');
   }
 
   definedAsyncCall() {
@@ -16,9 +16,9 @@ class WrittenRequest extends AsyncObject {
     };
   }
 
-  onResponse() {
-    return this.request;
-  }
+    onResult(result) {
+      return this.request;
+    }
 
 }
 
