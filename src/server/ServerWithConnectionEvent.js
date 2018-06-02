@@ -9,6 +9,7 @@ class ServerWithConnectionEvent extends AsyncObject {
     super(server, event);
   }
 
+  // event is an Event with definedBody(socket)
   definedSyncCall() {
     return (server, event) => {
       server.on('connection', event);

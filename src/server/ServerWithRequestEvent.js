@@ -9,6 +9,7 @@ class ServerWithRequestEvent extends AsyncObject {
     super(server, event);
   }
 
+  // event is an Event with definedBody(request, response)
   definedSyncCall() {
     return (server, event) => {
       server.on('request', event);
