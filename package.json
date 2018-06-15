@@ -1,6 +1,6 @@
 {
   "name": "@guseyn/cutie-http",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Cutie extension for http module in Node",
   "main": "index.js",
   "scripts": {
@@ -18,10 +18,10 @@
   "dependencies": {
     "@guseyn/cutie": "1.4.0",
     "@guseyn/cutie-assert": "1.1.0",
-    "@guseyn/cutie-is": "1.0.2",
-    "@guseyn/cutie-stream": "1.0.8",
+    "@guseyn/cutie-is": "1.0.3",
+    "@guseyn/cutie-stream": "1.0.9",
     "@guseyn/cutie-object": "1.0.1",
-    "@guseyn/cutie-process": "1.0.6",
+    "@guseyn/cutie-process": "1.0.7",
     "test-executor": "1.0.8"
   },
   "author": "guseyn",
