@@ -17,5 +17,26 @@ const {
 } = require('@guseyn/cutie-http');
 ```
 
+## agent
+
+| Async Object  | Async/sync call | Parameters | Representation result |
+| ------------- | ----------------| ---------- | --------------------- |
+| CreatedAgentConnection | `agent.createConnection` | agent, options | stream/socket |
+| DestroyedAgent | `agent.destroy` | agent | agent |
+| KeptSocketAliveOfAgent | `agent.keepSocketAlive` | agent, socket | socket |
+| MaxFreeSocketsOfAgent | `agent.maxFreeSockets` | agent | number |
+| MaxSocketsOfAgent | `agent.maxSockets` | agent | number |
+| NameOfAgent | `agent.getName` | agent, options | string |
+| RequestsOfAgent | `agent.requests` | agent | object |
+| ReusedSocketOfAgent | `agent.reuseSocket` | agent, socket | stream/socket |
+| SocketsOfAgent | `agent.sockets` | agent | object |
+
+## http
+
+| Async Object  | Async/sync call | Parameters | Representation result |
+| ------------- | ----------------| ---------- | --------------------- |
+| CreatedHttpServer | `http.createServer` | requestListener(Event with definedBody(request, response)) | server |
+| HttpGetRequest | `http.get` |  ||
+
 [npm-image]: https://img.shields.io/npm/v/@guseyn/cutie-http.svg
 [npm-url]: https://npmjs.org/package/@guseyn/cutie-http
