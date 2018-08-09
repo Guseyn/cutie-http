@@ -17,6 +17,8 @@ const {
 } = require('@guseyn/cutie-http');
 ```
 
+For more information about parameters in the async objects visit [docs of Node](https://nodejs.org/en/docs/).
+
 ## agent
 
 | Async Object  | Async/sync call | Parameters | Representation result |
