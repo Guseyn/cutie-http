@@ -1,4 +1,4 @@
-# cutie-fs
+# cutie-http
 
 [![NPM Version][npm-image]][npm-url]
 
