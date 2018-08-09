@@ -43,8 +43,21 @@ const {
 
 | Async Object  | Async/sync call | Parameters | Representation result |
 | ------------- | ----------------| ---------- | --------------------- |
-| AbortedReqest |  |||
-
+| AbortedReqest | `request.abort` | request.abort | request |
+| EndedReqest | `request.end` | request, data, encoding | request |
+| RequestAbortedTime | `request.aborted` | request | number |
+| RequestHeader | `request.header` | request, name | string |
+| RequestWithAbortEvent | `request.on('abort', event)` | request, event( Event with definedBody() ) | request |
+| RequestWithConnectEvent | `request.on('connect', event)` |request, event ( Event with definedBody(incomingMessage, socket, head) )| request |
+|||||
+|||||
+|||||
+|||||
+|||||
+|||||
+|||||
+|||||
+|||||
 
 [npm-image]: https://img.shields.io/npm/v/@guseyn/cutie-http.svg
 [npm-url]: https://npmjs.org/package/@guseyn/cutie-http
