@@ -1,8 +1,21 @@
-# cutie-http
-Cutie extension for http module in Node.
+# cutie-fs
 
-This module has no docs, but it will be ready soon.
+[![NPM Version][npm-image]][npm-url]
 
-It's available on npm: <b>npm i @guseyn/cutie-http</b>
+[Cutie](https://github.com/Guseyn/cutie) extension for http module in Node. It's based on the [Async Tree Pattern](https://github.com/Guseyn/async-tree-patern/blob/master/Async_Tree_Patern.pdf).
 
-<b>Don't install via: npm i cutie-http (it's broken, and not supported anymore!).<b> 
+
+# Examples
+
+You can find examples of using this library in the [test directory](https://github.com/Guseyn/cutie-http/tree/master/test).
+
+# Usage
+
+```js
+const {
+  // Needed async objects here from the table below
+} = require('@guseyn/cutie-http');
+```
+
+[npm-image]: https://img.shields.io/npm/v/@guseyn/cutie-http.svg
+[npm-url]: https://npmjs.org/package/@guseyn/cutie-http
