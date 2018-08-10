@@ -45,21 +45,28 @@ For more information about parameters in the async objects visit [docs of Node](
 
 | Async Object  | Async/sync call | Parameters | Representation result |
 | ------------- | ----------------| ---------- | --------------------- |
-| AbortedReqest | `request.abort` | request.abort | request |
+| AbortedReqest | `request.abort` | request | request |
 | EndedReqest | `request.end` | request, data, encoding | request |
 | RequestAbortedTime | `request.aborted` | request | number |
 | RequestHeader | `request.header` | request, name | string |
 | RequestWithAbortEvent | `request.on('abort', event)` | request, event( Event with definedBody() ) | request |
-| RequestWithConnectEvent | `request.on('connect', event)` |request, event ( Event with definedBody(incomingMessage, socket, head) )| request |
-|||||
-|||||
-|||||
-|||||
-|||||
-|||||
-|||||
-|||||
-|||||
+| RequestWithConnectEvent | `request.on('connect', event)` |request, event( Event with definedBody(incomingMessage, socket, head) )| request |
+| RequestWithContinueEvent | `request.on('continue', event)` | request, event( Event with definedBody() ) | request |
+| RequestWithDataEvent | `request.on('data', event)` | request, event ( Event with definedBody(chunk) ) | request |
+| RequestWithEndEvent | `request.on('end', event)` | request, event ( Event with definedBody() ) | request |
+| RequestWithErrorEvent | `request.on('error', event)` | request, event ( Event with definedBody(error) ) | request |
+| RequestWithFlushedHeaders | `request.flushHeaders` | request | request |
+| RequestWithHeader | `request.setHeader` | request, name, value | request |
+| RequestWithNoDelay | `request.setNoDelay` | request, noDelay | request |
+| RequestWithRemovedHeader | `request.removeHeader` | request, name | request |
+| RequestWithResponseEvent | `request.on('response', event)` | request, event( Event with definedBody(response) ) | request |
+| RequestWithSocketEvent | `request.on('socket', event)` | request, event( Event with definedBody(socket) ) | request |
+| RequestWithSockedKeepAlive | `request.setSocketKeepAlive` | request, enable, initialDelay | request |
+| RequestWithTimeout | `request.setTimeout` | request, timeout | request |
+| RequestWithTimeoutEvent | `request.on('timeout', event)` | request, event( Event with definedBody() ) | request |
+| RequestWithUpgradeEvent | `request.on('upgrade', event)` | request, event( Event with definedBody(req, socket, head) ) | request |
+| SocketOfRequest | `request.socket` | request | socket |
+| WrittenRequest | `request.write` | request, chunk, encoding('utf8') | request |
 
 [npm-image]: https://img.shields.io/npm/v/@guseyn/cutie-http.svg
 [npm-url]: https://npmjs.org/package/@guseyn/cutie-http
