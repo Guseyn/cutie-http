@@ -41,6 +41,25 @@ For more information about parameters in the async objects visit [docs of Node](
 | HttpGetRequest | `http.get` | options, listener( Event(one time) with `definedBody(incomingMessage)` ) | request |
 | HttpRequest | `http.request` | options, listener( Event(one time) with `definedBody(incomingMessage)` ) | request |
 
+## incoming-message
+
+| Async Object  | Async/sync call | Parameters | Representation result |
+| ------------- | ----------------| ---------- | --------------------- |
+| DestroyedIncomingMessage | `message.destroy` | message | message |
+| HeadersOfIncomingMessage | `message.headers` | message | object |
+| HttpVersionOfIncomingVersion | `message.httpVersion` | message | string |
+| IncomingMessageWithAbortEvent | `message.on('abort', event)` | message, event(Event with `definedBody()`) | message |
+| IncomingMessageWithCloseEvent | `message.on('close', event)` | message, event(Event with `definedBody()`) | message |
+| IncomingMessageWithTimeout | `message.setTimeout` | message, msecs, callback | message |
+| MethodOfIncomingMessage | `message.method` | message | string |
+| RawHeadersOfIncomingMessage | `message.rawHeaders` | message | string[] |
+| RawTrailersOfIncomingMessage | `message.rawTrailers` | message | string[] |
+| SocketOfIncomingMessage | `message.socket` | message | socket |
+| StatusCodeOfIncomingMessage | `message.statusCode` | message | number |
+| StatusMessageOfIncomingMessage | `message.statusMessage` | message | string |
+| TrailersOfIncomingMessage | `message.trailers` | message | object |
+| UrlOfIncomingMessage | `message.url` | message | string |
+
 ## request
 
 | Async Object  | Async/sync call | Parameters | Representation result |
@@ -67,6 +86,51 @@ For more information about parameters in the async objects visit [docs of Node](
 | RequestWithUpgradeEvent | `request.on('upgrade', event)` | request, event( Event with `definedBody(req, socket, head)` ) | request |
 | SocketOfRequest | `request.socket` | request | socket |
 | WrittenRequest | `request.write` | request, chunk, encoding('utf8') | request |
+
+## reponse
+
+| Async Object  | Async/sync call | Parameters | Representation result |
+| ------------- | ----------------| ---------- | --------------------- |
+| ConnectionOfResponse | `response.connection` | response | socket |
+| EndedResponse | `response.end` | response, data, encoding('utf8') | response |
+| HasResponseHeader | `response.hasHeader` | response, name | boolean |
+| HeaderOfResponse | `response.getHeader` | response, name | string |
+| HeadersOfResponse | `response.getHeaders` | response | object |
+| IsResponseFinished | `response.finished` | response | boolean |
+| ResponseWithAddedTrailers | `response.addTrailers` | response, headers | response |
+| ResponseWithCloseEvent | `response.on('close', event)` | response, event(Event with definedBody()) | response |
+| ResponseWithFinishEvent | `response.on('finish', event)` | response, event(Event with definedBody()) | response |
+| ResponseWithHeader | `response.setHeader` | response, name, value | response |
+| ResponseWithRemovedHeader | `response.removeHeader` | response, name | response |
+| ResponseWithTimeout | `response.setTimeout` | response, msecs, callback | response |
+| ResponseWithWrittenHead | `response.writeHead` | response, statusCode, statusMessage, headers | response |
+| SendDateOfResponse | `response.sendDate` | response | boolean |
+| SocketOfResponse | `response.socket` | response | socket |
+| StatusCodeOfResponse | `response.statusCode` | response | number |
+| StatusMessageOfResponse | `response.statusMessage` | response | string |
+| HaveResponseHeadersSent | `response.headersSent` | response | boolean |
+| WrittenContinueResponse | `response.writeContinue` | response | response |
+| WrittenResponse | `response.write` | response, chunk, encoding('utf8') | response |
+
+## server
+
+| Async Object  | Async/sync call | Parameters | Representation result |
+| ------------- | ----------------| ---------- | --------------------- |
+| ClosedServer | `server.close` | server | server |
+| IsServerListening | `server.listening` | server | boolean |
+| KeepAliveTimeoutOfServer | `server.keepAliveTimeout` | server | number |
+| ListeningServer | `server.listen` | [...args](https://nodejs.org/dist/latest-v8.x/docs/api/net.html#net_server_listen) | server |
+| MaxHeadersCountOfServer | `server.maxHeadersCount` | server | number |
+| ServerWithCloseEvent | `server.on('close', event)` | server, event(Event with `definedBody()`) ||
+| ServerWithCheckContinueEvent | `server.on('checkContinue', event)` | server, event(Event with `definedBody(req, res)`) | server |
+| ServerWithCheckExpectationEvent | `server.on('checkExpectation', event)` | server, event(Event with `definedBody(req, res)`) | server |
+| ServerWithClientErrorEvent | `server.on('clientError', event)` | server, event(Event with `definedBody(exception, socket)`) | server |
+| ServerWithConnectEvent | `server.on('connect', event)` | server, event(Event with `definedBody(request, socket, head)`) | server |
+| ServerWithConnectionEvent | `server.on('connection', event)` | server, event(Event with `definedBody(socket)`) | server |
+| ServerWithRequestEvent | `server.on('request', event)` | server, event(Event with `definedBody(request, response)`) | server |
+| ServerWithTimeout | `server.setTimeout` | server, msecs, callback | server |
+| ServerWithUpgradeEvent | `server.on('upgrade', event)` | server, event(Event with `definedBody(request, socket, head)`) | server |
+| TimeoutOfServer | `server.timeout` | server | number |
 
 [npm-image]: https://img.shields.io/npm/v/@guseyn/cutie-http.svg
 [npm-url]: https://npmjs.org/package/@guseyn/cutie-http
