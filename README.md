@@ -102,6 +102,8 @@ For more information about parameters in the async objects visit [docs of Node](
 | ResponseWithFinishEvent | `response.on('finish', event)` | response, event(Event with definedBody()) | response |
 | ResponseWithHeader | `response.setHeader` | response, name, value | response |
 | ResponseWithRemovedHeader | `response.removeHeader` | response, name | response |
+| ResponseWithStatusCode | `response.statusCode` | response, statusCode | response |
+| ResponseWithStatusMessage | `response.statusMessage` | response, statusMessage | response |
 | ResponseWithTimeout | `response.setTimeout` | response, msecs, callback | response |
 | ResponseWithWrittenHead | `response.writeHead` | response, statusCode, statusMessage, headers | response |
 | SendDateOfResponse | `response.sendDate` | response | boolean |
