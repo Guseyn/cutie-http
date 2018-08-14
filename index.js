@@ -64,6 +64,8 @@ module.exports = {
   ResponseWithFinishEvent: require('./src/response/ResponseWithFinishEvent'),
   ResponseWithHeader: require('./src/response/ResponseWithHeader'),
   ResponseWithRemovedHeader: require('./src/response/ResponseWithRemovedHeader'),
+  ResponseWithStatusCode: require('./src/response/ResponseWithStatusCode'),
+  ResponseWithStatusMessage: require('./src/response/ResponseWithStatusMessage'),
   ResponseWithTimeout: require('./src/response/ResponseWithTimeout'),
   ResponseWithWrittenHead: require('./src/response/ResponseWithWrittenHead'),
   SendDateOfResponse: require('./src/response/SendDateOfResponse'),
