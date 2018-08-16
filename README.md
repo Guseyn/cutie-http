@@ -64,7 +64,7 @@ For more information about parameters in the async objects visit [docs of Node](
 
 | Async Object  | Async/sync call | Parameters | Representation result |
 | ------------- | ----------------| ---------- | --------------------- |
-| AbortedReqest | `request.abort` | request | request |
+| `AbortedReqest` | `request.abort` | `request` | `request` |
 | EndedReqest | `request.end` | request, data, encoding | request |
 | RequestAbortedTime | `request.aborted` | request | number |
 | RequestHeader | `request.header` | request, name | string |
