@@ -79,7 +79,7 @@ For more information about parameters in the async objects visit [docs of Node](
 | `RequestWithNoDelay` | `request.setNoDelay` | `request, noDelay` | `request` |
 | `RequestWithRemovedHeader` | `request.removeHeader` | `request, name` | `request` |
 | `RequestWithResponseEvent` | `request.on('response', event)` | `request, event(Event with definedBody(response))` | `request` |
-| `RequestWithSocketEvent` | `request.on('socket', event)` | `request, event(Event with definedBody(socket)` ) | `request` |
+| `RequestWithSocketEvent` | `request.on('socket', event)` | `request, event(Event with definedBody(socket))` | `request` |
 | `RequestWithSockedKeepAlive` | `request.setSocketKeepAlive` | `request, enable, initialDelay` | `request` |
 | `RequestWithTimeout` | `request.setTimeout` | `request, timeout` | `request` |
 | `RequestWithTimeoutEvent` | `request.on('timeout', event)` | `request, event(Event with definedBody())` | `request` |
