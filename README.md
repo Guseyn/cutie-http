@@ -17,7 +17,7 @@ const {
 } = require('@guseyn/cutie-http');
 ```
 
-For more information about parameters in the async objects visit [docs of Node](https://nodejs.org/en/docs/) for http module.
+For more information about parameters in the async objects visit [docs of Node](https://nodejs.org/en/docs/) for <b>http</b> module.
 
 ## agent
 
