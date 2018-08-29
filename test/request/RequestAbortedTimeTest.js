@@ -2,18 +2,18 @@
 
 const {
   as, AsyncObject
-}  = require('@guseyn/cutie');
+}  = require('@cuties/cutie');
 const {
   Assertion
-} = require('@guseyn/cutie-assert');
+} = require('@cuties/assert');
 const {
   IsNumber
-} = require('@guseyn/cutie-is');
+} = require('@cuties/is');
 const {
   FoundProcessOnPort,
   Pid,
   KilledProcess
-} = require('@guseyn/cutie-process');
+} = require('@cuties/process');
 const {
   RequestAbortedTime,
   AbortedRequest,

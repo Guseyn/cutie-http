@@ -2,7 +2,7 @@
 
 const {
   Event
-} = require('@guseyn/cutie');
+} = require('@cuties/cutie');
 const {
   CreatedHttpServer,
   ListeningServer,

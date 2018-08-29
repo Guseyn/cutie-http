@@ -5,18 +5,18 @@ const {
 } = require('http');
 const {
   as, AsyncObject, Event
-}  = require('@guseyn/cutie');
+}  = require('@cuties/cutie');
 const {
   Assertion
-} = require('@guseyn/cutie-assert');
+} = require('@cuties/assert');
 const {
   Is
-} = require('@guseyn/cutie-is');
+} = require('@cuties/is');
 const {
   FoundProcessOnPort,
   Pid,
   KilledProcess
-} = require('@guseyn/cutie-process');
+} = require('@cuties/process');
 const {
   ServerWithClientErrorEvent,
   HttpRequest,

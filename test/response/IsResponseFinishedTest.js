@@ -5,15 +5,15 @@ const {
 } = require('http');
 const {
   as, AsyncObject, Event
-}  = require('@guseyn/cutie');
+}  = require('@cuties/cutie');
 const {
   Assertion
-} = require('@guseyn/cutie-assert');
+} = require('@cuties/assert');
 const {
   FoundProcessOnPort,
   Pid,
   KilledProcess
-} = require('@guseyn/cutie-process');
+} = require('@cuties/process');
 const {
   IsResponseFinished,
   ResponseWithHeader,

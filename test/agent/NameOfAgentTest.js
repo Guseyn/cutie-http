@@ -8,21 +8,21 @@ const {
 } = require('net');
 const {
   as
-} = require('@guseyn/cutie');
+} = require('@cuties/cutie');
 const {
   Assertion
-} = require('@guseyn/cutie-assert');
+} = require('@cuties/assert');
 const {
   Is, IsString
-} = require('@guseyn/cutie-is');
+} = require('@cuties/is');
 const {
   DestroyedStream
-} = require('@guseyn/cutie-stream');
+} = require('@cuties/stream');
 const {
   FoundProcessOnPort,
   Pid,
   KilledProcess
-} = require('@guseyn/cutie-process');
+} = require('@cuties/process');
 const {
   CreatedAgentConnection,
   ClosedServer,
