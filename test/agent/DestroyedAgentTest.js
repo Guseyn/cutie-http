@@ -8,24 +8,24 @@ const {
 } = require('net');
 const {
   as, AsyncObject, Event
-} = require('@guseyn/cutie');
+} = require('@cuties/cutie');
 const {
   Assertion, EqualAssertion
-} = require('@guseyn/cutie-assert');
+} = require('@cuties/assert');
 const {
   Is
-} = require('@guseyn/cutie-is');
+} = require('@cuties/is');
 const {
   DestroyedStream
-} = require('@guseyn/cutie-stream');
+} = require('@cuties/stream');
 const {
   FoundProcessOnPort,
   Pid,
   KilledProcess
-} = require('@guseyn/cutie-process');
+} = require('@cuties/process');
 const {
   HasOwnProperty
-} = require('@guseyn/cutie-object');
+} = require('@cuties/object');
 const {
   CreatedAgentConnection,
   ClosedServer,

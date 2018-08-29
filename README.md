@@ -14,7 +14,7 @@ You can find examples of using this library in the [test directory](https://gith
 ```js
 const {
   // Needed async objects here from the table below
-} = require('@guseyn/cutie-http');
+} = require('@cuties/http');
 ```
 
 For more information about parameters in the async objects visit [docs of Node](https://nodejs.org/en/docs/) for <b>http</b> module.
@@ -134,5 +134,5 @@ For more information about parameters in the async objects visit [docs of Node](
 | `ServerWithUpgradeEvent` | `server.on('upgrade', event)` | `server, event(Event with definedBody(request, socket, head)`) | `server` |
 | `TimeoutOfServer` | `server.timeout` | `server` | `number` |
 
-[npm-image]: https://img.shields.io/npm/v/@guseyn/cutie-http.svg
-[npm-url]: https://npmjs.org/package/@guseyn/cutie-http
+[npm-image]: https://img.shields.io/npm/v/@cuties/http.svg
+[npm-url]: https://npmjs.org/package/@cuties/http
