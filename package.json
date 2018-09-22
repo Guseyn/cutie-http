@@ -1,6 +1,6 @@
 {
   "name": "@cuties/http",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Cutie extension for http module in Node",
   "main": "index.js",
   "scripts": {
@@ -16,13 +16,13 @@
     "oop"
   ],
   "dependencies": {
-    "@cuties/cutie": "1.4.3",
-    "@cuties/assert": "1.1.4",
-    "@cuties/is": "1.0.6",
-    "@cuties/stream": "1.1.0",
-    "@cuties/object": "1.0.3",
-    "@cuties/process": "1.0.9",
-    "test-executor": "1.1.0"
+    "@cuties/cutie": "1.4.4",
+    "@cuties/assert": "1.1.5",
+    "@cuties/is": "1.0.8",
+    "@cuties/stream": "1.1.1",
+    "@cuties/object": "1.0.4",
+    "@cuties/process": "1.1.0",
+    "test-executor": "1.1.2"
   },
   "author": "guseyn",
   "license": "MIT",
