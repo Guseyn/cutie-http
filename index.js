@@ -1,5 +1,6 @@
 module.exports = {
 
+  CreatedAgent: require('./src/agent/CreatedAgent'),
   CreatedAgentConnection: require('./src/agent/CreatedAgentConnection'),
   DestroyedAgent: require('./src/agent/DestroyedAgent'),
   KeptSocketAliveOfAgent: require('./src/agent/KeptSocketAliveOfAgent'),
@@ -28,6 +29,8 @@ module.exports = {
   StatusMessageOfIncomingMessage: require('./src/incoming-message/StatusMessageOfIncomingMessage'),
   TrailersOfIncomingMessage: require('./src/incoming-message/TrailersOfIncomingMessage'),
   UrlOfIncomingMessage: require('./src/incoming-message/UrlOfIncomingMessage'),
+
+  CreatedOptions: require('./src/options/CreatedOptions'),
 
   AbortedRequest: require('./src/request/AbortedRequest'),
   EndedRequest: require('./src/request/EndedRequest'),
