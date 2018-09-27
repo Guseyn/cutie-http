@@ -31,6 +31,7 @@ module.exports = {
   UrlOfIncomingMessage: require('./src/incoming-message/UrlOfIncomingMessage'),
 
   CreatedOptions: require('./src/options/CreatedOptions'),
+  OptionsWithAgent: require('./src/options/OptionsWithAgent'),
 
   AbortedRequest: require('./src/request/AbortedRequest'),
   EndedRequest: require('./src/request/EndedRequest'),

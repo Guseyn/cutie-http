@@ -8,8 +8,8 @@ const {
 // Represented result is agent
 class CreatedAgent extends AsyncObject {
 
-  constructor(agent) {
-    super(agent);
+  constructor(options) {
+    super(options);
   }
 
   definedSyncCall() {

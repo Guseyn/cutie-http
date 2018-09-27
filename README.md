@@ -23,6 +23,7 @@ For more information about parameters in the async objects visit [docs of Node](
 
 | Async Object  | Async/sync call | Parameters(default value/description) | Representation result |
 | ------------- | ----------------| ---------- | --------------------- |
+| `CreatedAgent` | `new Agent` | `options` | `agent` |
 | `CreatedAgentConnection` | `agent.createConnection` | `agent, options` | `stream/socket` |
 | `DestroyedAgent` | `agent.destroy` | `agent` | `agent` |
 | `KeptSocketAliveOfAgent` | `agent.keepSocketAlive` | `agent, socket` | `socket` |
@@ -59,6 +60,13 @@ For more information about parameters in the async objects visit [docs of Node](
 | `StatusMessageOfIncomingMessage` | `message.statusMessage` | `message` | `string` |
 | `TrailersOfIncomingMessage` | `message.trailers` | `message` | `object` |
 | `UrlOfIncomingMessage` | `message.url` | `message` | `string` |
+
+## options
+
+| Async Object  | Async/sync call or Description | Parameters(default value/description) | Representation result |
+| ------------- | ----------------| ---------- | --------------------- |
+| `CreatedOptions` | Builds options object: `(key1, value1, key2, value2) => {key1: value1, key2: value2}`  | `...args like (key1, value1, key2, value2)` | `object` |
+| `OptionsWithAgent` | `options.agent = agent`  | `options, agent` | `object` |
 
 ## request
 
