@@ -4,18 +4,18 @@ const AsyncObject = require('@cuties/cutie').AsyncObject;
 const http = require('http');
 
 // Represented result is server
-class CreatedDefaultHttpServer extends AsyncObject {
+class CreatedHttpServer extends AsyncObject {
 
-  constructor(requestListener) {
-    super(requestListener);
+  constructor(options, requestListener) {
+    super(options, requestListener);
   }
 
   definedSyncCall() {
-    return (requestListener) => {
-      return http.createServer(requestListener);
+    return (options, requestListener) => {
+      return http.createServer(options, requestListener);
     }
   }
 
 }
 
-module.exports = CreatedDefaultHttpServer;
+module.exports = CreatedHttpServer;
