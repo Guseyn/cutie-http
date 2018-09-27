@@ -37,9 +37,9 @@ For more information about parameters in the async objects visit [docs of Node](
 
 | Async Object  | Async/sync call | Parameters(default value/description) | Representation result |
 | ------------- | ----------------| ---------- | --------------------- |
-| `CreatedHttpServer` | `http.createServer` | `requestListener(Event with definedBody(request, response))` | `server` |
-| `HttpGetRequest` | `http.get` | `options, listener(Event(one time) with definedBody(incomingMessage))` | `request` |
-| `HttpRequest` | `http.request` | `options, listener(Event(one time) with definedBody(incomingMessage))` | `request` |
+| `CreatedHttpServer` | `http.createServer` | `[options][, requestListener(Event with definedBody(request, response))]` | `server` |
+| `HttpGetRequest` | `http.get` | `options[, listener(Event(one time) with definedBody(incomingMessage))]` | `request` |
+| `HttpRequest` | `http.request` | `options[, listener(Event(one time) with definedBody(incomingMessage))]` | `request` |
 
 ## incoming-message
 
