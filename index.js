@@ -14,6 +14,11 @@ module.exports = {
   CreatedHttpServer: require('./src/http/CreatedHttpServer'),
   HttpGetRequest: require('./src/http/HttpGetRequest'),
   HttpRequest: require('./src/http/HttpRequest'),
+  ResponseBody: require('./src/http/ResponseBody'),
+  ResponseFromHttpGetRequest: require('./src/http/ResponseFromHttpGetRequest'),
+  ResponseFromHttpRequest: require('./src/http/ResponseFromHttpRequest'),
+  ResponseHeaders: require('./src/http/ResponseHeaders'),
+  ResponseStatusCode: require('./src/http/ResponseStatusCode'),
 
   DestroyedIncomingMessage: require('./src/incoming-message/DestroyedIncomingMessage'),
   HeadersOfIncomingMessage: require('./src/incoming-message/HeadersOfIncomingMessage'),
