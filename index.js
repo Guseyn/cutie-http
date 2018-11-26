@@ -23,7 +23,7 @@ module.exports = {
   DestroyedIncomingMessage: require('./src/incoming-message/DestroyedIncomingMessage'),
   HeadersOfIncomingMessage: require('./src/incoming-message/HeadersOfIncomingMessage'),
   HttpVersionOfIncomingMessage: require('./src/incoming-message/HttpVersionOfIncomingMessage'),
-  IncomingMessageWithAbortEvent: require('./src/incoming-message/IncomingMessageWithAbortEvent'),
+  IncomingMessageWithAbortedEvent: require('./src/incoming-message/IncomingMessageWithAbortedEvent'),
   IncomingMessageWithCloseEvent: require('./src/incoming-message/IncomingMessageWithCloseEvent'),
   IncomingMessageWithTimeout: require('./src/incoming-message/IncomingMessageWithTimeout'),
   MethodOfIncomingMessage: require('./src/incoming-message/MethodOfIncomingMessage'),
