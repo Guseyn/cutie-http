@@ -33,7 +33,7 @@ const options = {
   hostname: hostname,
   port: port,
   path: '/',
-  method: 'GET'
+  method: 'POST'
 };
 
 class GeneratedRequestCallback extends AsyncObject {
@@ -71,7 +71,7 @@ new KilledProcess(
         options, new GeneratedRequestCallback(
           as('server')
         )
-      )
+      ), 'body'
     )
   )
 ).call();

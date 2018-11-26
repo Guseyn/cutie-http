@@ -65,7 +65,7 @@ new KilledProcess(
             options, new GeneratedRequestCallback(
               as('server')
             )
-          )
+          ), 'body'
         ), ClientRequest
       )
     )

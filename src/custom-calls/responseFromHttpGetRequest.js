@@ -3,7 +3,7 @@
 const http = require('http');
 
 // err, {statusCode, headers, body} in callback
-const responseFromHttpGetReqest = (options, callback) => {
+const responseFromHttpGetRequest = (options, callback) => {
   http.get(options, (res) => {
     let resObj = {};
     resObj.statusCode = res.statusCode;
@@ -21,4 +21,4 @@ const responseFromHttpGetReqest = (options, callback) => {
   });
 }
 
-module.exports = responseFromHttpGetReqest;
+module.exports = responseFromHttpGetRequest;
