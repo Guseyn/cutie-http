@@ -3,7 +3,7 @@
 const AsyncObject = require('@cuties/cutie').AsyncObject;
 
 // Represented result is message
-class IncomingMessageWithAbortEvent extends AsyncObject {
+class IncomingMessageWithAbortedEvent extends AsyncObject {
 
   constructor(message, event) {
     super(message, event);
@@ -12,11 +12,11 @@ class IncomingMessageWithAbortEvent extends AsyncObject {
   // event is an Event with definedBody()
   definedSyncCall() {
     return (message, event) => {
-      message.on('abort', event);
+      message.on('aborted', event);
       return message;
     };
   }
 
 }
 
-module.exports = IncomingMessageWithAbortEvent;
+module.exports = IncomingMessageWithAbortedEvent;
