@@ -93,7 +93,7 @@ module.exports = {
   ServerWithCheckContinueEvent: require('./src/server/ServerWithCheckContinueEvent'),
   ServerWithCheckExpectationEvent: require('./src/server/ServerWithCheckExpectationEvent'),
   ServerWithClientErrorEvent: require('./src/server/ServerWithClientErrorEvent'),
-  ServerWithCloseEvent: require('./src/server/ServerWithCloseEvent'),
+  ServerWithCloseEvent12: require('./src/server/ServerWithCloseEvent12'),
   ServerWithConnectEvent: require('./src/server/ServerWithConnectEvent'),
   ServerWithConnectionEvent: require('./src/server/ServerWithConnectionEvent'),
   ServerWithRequestEvent: require('./src/server/ServerWithRequestEvent'),
