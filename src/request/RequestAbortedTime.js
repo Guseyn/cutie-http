@@ -2,8 +2,8 @@
 
 const AsyncObject = require('@cuties/cutie').AsyncObject
 
-// Represented result is booleand
-class HasRequestAborted extends AsyncObject {
+// Represented result is number
+class RequestAbortedTime extends AsyncObject {
   constructor (request) {
     super(request)
   }
@@ -15,4 +15,4 @@ class HasRequestAborted extends AsyncObject {
   }
 }
 
-module.exports = HasRequestAborted
+module.exports = RequestAbortedTime
