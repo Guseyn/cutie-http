@@ -10,7 +10,7 @@ const {
   IsBoolean
 } = require('@cuties/is')
 const {
-  RequestAbortedTime,
+  HasRequestAborted,
   AbortedRequest,
   HttpRequest,
   EndedRequest,
@@ -46,7 +46,7 @@ class GeneratedRequestCallback extends AsyncObject {
 FakeServer(port).as('server').after(
   new Assertion(
     new IsBoolean(
-      new RequestAbortedTime(
+      new HasRequestAborted(
         new AbortedRequest(
           new HttpRequest(
             options, new GeneratedRequestCallback(

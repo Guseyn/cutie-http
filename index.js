@@ -40,7 +40,7 @@ module.exports = {
 
   AbortedRequest: require('./src/request/AbortedRequest'),
   EndedRequest: require('./src/request/EndedRequest'),
-  RequestAbortedTime: require('./src/request/RequestAbortedTime'),
+  HasRequestAborted: require('./src/request/HasRequestAborted'),
   RequestHeader: require('./src/request/RequestHeader'),
   RequestWithAbortEvent: require('./src/request/RequestWithAbortEvent'),
   RequestWithConnectEvent: require('./src/request/RequestWithConnectEvent'),
