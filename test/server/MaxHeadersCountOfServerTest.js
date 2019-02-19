@@ -7,7 +7,7 @@ const {
   Assertion
 } = require('@cuties/assert')
 const {
-  IsNumber
+  IsNull
 } = require('@cuties/is')
 const {
   HttpRequest,
@@ -49,9 +49,8 @@ class GeneratedRequestCallback extends AsyncObject {
   definedSyncCall () {
     return (server) => {
       return (res) => {
-        server.maxHeadersCount = 2000
         new Assertion(
-          new IsNumber(
+          new IsNull(
             new MaxHeadersCountOfServer(
               server
             )
