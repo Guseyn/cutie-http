@@ -92,7 +92,7 @@ For more information about parameters in the async objects visit [docs of Node](
 | ------------- | ----------------| ---------- | --------------------- |
 | `AbortedReqest` | `request.abort` | `request` | `request` |
 | `EndedReqest` | `request.end` | `request, data`, `encoding` | `request` |
-| `RequestAbortedTime` | `request.aborted` | `request` | `number` |
+| `HasRequestAborted` | `request.aborted` | `request` | `number` |
 | `RequestHeader` | `request.header` | `request, name` | `string` |
 | `RequestWithAbortEvent` | `request.on('abort', event)` | `request, event(Event with definedBody())` | `request` |
 | `RequestWithConnectEvent` | `request.on('connect', event)` |`request, event(Event with definedBody(incomingMessage, socket, head))` | `request` |
