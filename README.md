@@ -2,7 +2,7 @@
 
 [![NPM Version](https://img.shields.io/npm/v/@cuties/http.svg)](https://npmjs.org/package/@cuties/http)
 [![Build Status](https://travis-ci.org/Guseyn/cutie-http.svg?branch=master)](https://travis-ci.org/Guseyn/cutie-http)
-[![codecov](https://codecov.io/gh/Guseyn/cutie-array-iteration/branch/master/graph/badge.svg)](https://codecov.io/gh/Guseyn/cutie-http)
+[![codecov](https://codecov.io/gh/Guseyn/cutie-http/branch/master/graph/badge.svg)](https://codecov.io/gh/Guseyn/cutie-http)
 
 [Cutie](https://github.com/Guseyn/cutie) extension for <b>http</b> module in Node. It's based on the [Async Tree Pattern](https://github.com/Guseyn/async-tree-patern/blob/master/Async_Tree_Patern.pdf).
 
