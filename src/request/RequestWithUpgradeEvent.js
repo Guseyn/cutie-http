@@ -1,22 +1,20 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is request
 class RequestWithUpgradeEvent extends AsyncObject {
-
-  constructor(request, event) {
-    super(request, event);
+  constructor (request, event) {
+    super(request, event)
   }
 
   // event is an Event with definedBody(req, socket, head)
-  definedSyncCall() {
+  definedSyncCall () {
     return (request, event) => {
-      request.on('upgrade', event);
-      return request;
-    };
+      request.on('upgrade', event)
+      return request
+    }
   }
-
 }
 
-module.exports = RequestWithUpgradeEvent;
+module.exports = RequestWithUpgradeEvent

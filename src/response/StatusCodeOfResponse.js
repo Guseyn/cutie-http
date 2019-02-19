@@ -1,20 +1,18 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is number
 class StatusCodeOfResponse extends AsyncObject {
-
-  constructor(response) {
-    super(response);
+  constructor (response) {
+    super(response)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (response) => {
-      return response.statusCode;
-    };
+      return response.statusCode
+    }
   }
-
 }
 
-module.exports = StatusCodeOfResponse;
+module.exports = StatusCodeOfResponse

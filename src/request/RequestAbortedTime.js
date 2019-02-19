@@ -1,20 +1,18 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is number
 class RequestAbortedTime extends AsyncObject {
-
-  constructor(request) {
-    super(request);
+  constructor (request) {
+    super(request)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (request) => {
-      return request.aborted;
+      return request.aborted
     }
   }
-
 }
 
-module.exports = RequestAbortedTime;
+module.exports = RequestAbortedTime

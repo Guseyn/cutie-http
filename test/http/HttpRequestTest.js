@@ -3,46 +3,45 @@
 const {
   Server,
   IncomingMessage
-} = require('http');
+} = require('http')
 const {
-  as, AsyncObject, Event
-} = require('@cuties/cutie');
+  as, AsyncObject
+} = require('@cuties/cutie')
 const {
-  Assertion, EqualAssertion
-} = require('@cuties/assert');
+  Assertion
+} = require('@cuties/assert')
 const {
   Is
-} = require('@cuties/is');
+} = require('@cuties/is')
 const {
   FoundProcessOnPort,
   Pid,
   KilledProcess
-} = require('@cuties/process');
+} = require('@cuties/process')
 const {
   ClosedServer,
   HttpRequest,
   EndedRequest
-} = require('./../../index');
+} = require('./../../index')
 const {
   FakeServer
-} = require('./../../fake');
+} = require('./../../fake')
 
-const port = 8011;
-const hostname = '127.0.0.1';
+const port = 8011
+const hostname = '127.0.0.1'
 const options = {
   hostname: hostname,
   port: port,
   path: '/',
   method: 'POST'
-};
+}
 
 class GeneratedRequestCallback extends AsyncObject {
-
-  constructor(server) {
-    super(server);
+  constructor (server) {
+    super(server)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (server) => {
       return (res) => {
         new Assertion(
@@ -53,11 +52,10 @@ class GeneratedRequestCallback extends AsyncObject {
           ).after(
             new ClosedServer(server)
           )
-        ).call();
+        ).call()
       }
     }
   }
-
 }
 
 new KilledProcess(
@@ -74,4 +72,4 @@ new KilledProcess(
       ), 'body'
     )
   )
-).call();
+).call()

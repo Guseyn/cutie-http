@@ -1,21 +1,18 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is server
 class MaxHeadersCountOfServer extends AsyncObject {
-
-  constructor(server) {
-    super(server);
+  constructor (server) {
+    super(server)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (server) => {
-      console.log(server);
-    	return server.maxHeadersCount;
-    };
+      return server.maxHeadersCount
+    }
   }
-
 }
 
-module.exports = MaxHeadersCountOfServer;
+module.exports = MaxHeadersCountOfServer

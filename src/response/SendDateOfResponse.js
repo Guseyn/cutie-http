@@ -1,20 +1,18 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is boolean
 class SendDateOfResponse extends AsyncObject {
-
-  constructor(response) {
-    super(response);
+  constructor (response) {
+    super(response)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (response) => {
-      return response.sendDate;
-    };
+      return response.sendDate
+    }
   }
-
 }
 
-module.exports = SendDateOfResponse;
+module.exports = SendDateOfResponse

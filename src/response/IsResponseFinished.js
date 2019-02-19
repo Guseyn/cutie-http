@@ -1,20 +1,18 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is boolean
 class IsResponseFinished extends AsyncObject {
-
-  constructor(response) {
-    super(response);
+  constructor (response) {
+    super(response)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (response) => {
-      return response.finished;
-    };
+      return response.finished
+    }
   }
-
 }
 
-module.exports = IsResponseFinished;
+module.exports = IsResponseFinished

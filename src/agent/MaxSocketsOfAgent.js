@@ -1,20 +1,18 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is number
 class MaxSocketsOfAgent extends AsyncObject {
-
-  constructor(agent) {
-    super(agent);
+  constructor (agent) {
+    super(agent)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (agent) => {
-      return agent.maxSockets;
-    };
+      return agent.maxSockets
+    }
   }
-
 }
 
-module.exports = MaxSocketsOfAgent;
+module.exports = MaxSocketsOfAgent

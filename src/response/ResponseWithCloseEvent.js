@@ -1,21 +1,19 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is response
 class ResponseWithCloseEvent extends AsyncObject {
-
-  constructor(response, event) {
-    super(response, event);
+  constructor (response, event) {
+    super(response, event)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (response, event) => {
-      response.on('close', event);
-      return response;
-    };
+      response.on('close', event)
+      return response
+    }
   }
-
 }
 
-module.exports = ResponseWithCloseEvent;
+module.exports = ResponseWithCloseEvent

@@ -1,20 +1,18 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is request
 class RequestHeader extends AsyncObject {
-
-  constructor(request, name) {
-    super(request, name);
+  constructor (request, name) {
+    super(request, name)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (request, name) => {
-      return request.getHeader(name);
-    };
+      return request.getHeader(name)
+    }
   }
-
 }
 
-module.exports = RequestHeader;
+module.exports = RequestHeader

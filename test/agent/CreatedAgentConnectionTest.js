@@ -2,37 +2,37 @@
 
 const {
   Agent
-} = require('http');
+} = require('http')
 const {
   Socket
-} = require('net');
+} = require('net')
 const {
   as
-} = require('@cuties/cutie');
+} = require('@cuties/cutie')
 const {
   Assertion
-} = require('@cuties/assert');
+} = require('@cuties/assert')
 const {
   Is
-} = require('@cuties/is');
+} = require('@cuties/is')
 const {
   DestroyedStream
-} = require('@cuties/stream');
+} = require('@cuties/stream')
 const {
   FoundProcessOnPort,
   Pid,
   KilledProcess
-} = require('@cuties/process');
+} = require('@cuties/process')
 const {
   CreatedAgentConnection,
   ClosedServer
-} = require('./../../index');
+} = require('./../../index')
 const {
   FakeServer
-} = require('./../../fake');
+} = require('./../../fake')
 
-const agent = new Agent({ keepAlive: true });
-const port = 8000;
+const agent = new Agent({ keepAlive: true })
+const port = 8000
 
 new KilledProcess(
   new Pid(
@@ -43,7 +43,7 @@ new KilledProcess(
     new Assertion(
       new Is(
         new CreatedAgentConnection(
-          agent, {port: port}
+          agent, { port: port }
         ).as('socket'), Socket
       )
     ).after(
@@ -52,4 +52,4 @@ new KilledProcess(
       )
     )
   )
-).call();
+).call()

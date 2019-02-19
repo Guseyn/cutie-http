@@ -1,25 +1,23 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is server
 class ClosedServer extends AsyncObject {
-
-  constructor(server) {
-    super(server);
+  constructor (server) {
+    super(server)
   }
 
-  definedAsyncCall() {
+  definedAsyncCall () {
     return (server, callback) => {
-      server.close(callback);
-      this.server = server;
-    };
+      server.close(callback)
+      this.server = server
+    }
   }
 
-  onResult() {
-    return this.server;
+  onResult () {
+    return this.server
   }
-
 }
 
-module.exports = ClosedServer;
+module.exports = ClosedServer

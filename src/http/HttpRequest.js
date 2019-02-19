@@ -1,26 +1,24 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
-const http = require('http');
+const AsyncObject = require('@cuties/cutie').AsyncObject
+const http = require('http')
 
 // Represented result is request
 class HttpRequest extends AsyncObject {
-
   // callback can be an Event
-  constructor(options, callback) {
-    super(options, callback);
+  constructor (options, callback) {
+    super(options, callback)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (options, callback) => {
-      return http.request(options, callback);
+      return http.request(options, callback)
     }
   }
 
-  onResult(req) {
-    return req;
+  onResult (req) {
+    return req
   }
-
 }
 
-module.exports = HttpRequest;
+module.exports = HttpRequest

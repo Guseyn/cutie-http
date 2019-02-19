@@ -1,21 +1,19 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is response
 class ResponseWithFinishEvent extends AsyncObject {
-
-  constructor(response, event) {
-    super(response, event);
+  constructor (response, event) {
+    super(response, event)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (response, event) => {
-      response.on('finish', event);
-      return response;
-    };
+      response.on('finish', event)
+      return response
+    }
   }
-
 }
 
-module.exports = ResponseWithFinishEvent;
+module.exports = ResponseWithFinishEvent
