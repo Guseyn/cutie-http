@@ -10,7 +10,7 @@ const {
   IsNumber
 } = require('@cuties/is')
 const {
-  HasRequestAborted,
+  RequestAbortedTime,
   AbortedRequest,
   HttpRequest,
   EndedRequest,
@@ -46,7 +46,7 @@ class GeneratedRequestCallback extends AsyncObject {
 FakeServer(port).as('server').after(
   new Assertion(
     new IsNumber(
-      new HasRequestAborted(
+      new RequestAbortedTime(
         new AbortedRequest(
           new HttpRequest(
             options, new GeneratedRequestCallback(
