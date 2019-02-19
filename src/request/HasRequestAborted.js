@@ -10,7 +10,6 @@ class HasRequestAborted extends AsyncObject {
 
   definedSyncCall () {
     return (request) => {
-      console.log(request.aborted)
       return request.aborted
     }
   }
