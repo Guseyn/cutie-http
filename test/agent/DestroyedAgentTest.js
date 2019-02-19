@@ -64,7 +64,7 @@ class GeneratedRequestCallback extends AsyncObject {
               ), true
               /*
                 It's strange behavior. But DestroyedAgent works because connection don't hang.
-                If you try this test without DestroyedAgent, the test will run a long time.
+                If you try this test without DestroyedAgent, the test will run for long time.
               */
             ).after(
               new DestroyedStream(socket).after(
