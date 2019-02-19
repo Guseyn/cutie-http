@@ -1,21 +1,19 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is response
 class ResponseWithStatusMessage extends AsyncObject {
-
-  constructor(response, statusMessage) {
-    super(response, statusMessage);
+  constructor (response, statusMessage) {
+    super(response, statusMessage)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (response, statusMessage) => {
-      response.statusMessage = statusMessage;
-      return response;
-    };
+      response.statusMessage = statusMessage
+      return response
+    }
   }
-
 }
 
-module.exports = ResponseWithStatusMessage;
+module.exports = ResponseWithStatusMessage

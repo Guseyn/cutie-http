@@ -2,30 +2,30 @@
 
 const {
   Agent
-} = require('http');
+} = require('http')
 const {
   Socket
-} = require('net');
+} = require('net')
 const {
-  as, AsyncObject, Event
-} = require('@cuties/cutie');
+  as, AsyncObject
+} = require('@cuties/cutie')
 const {
-  Assertion, EqualAssertion
-} = require('@cuties/assert');
+  Assertion, StrictEqualAssertion
+} = require('@cuties/assert')
 const {
   Is
-} = require('@cuties/is');
+} = require('@cuties/is')
 const {
   DestroyedStream
-} = require('@cuties/stream');
+} = require('@cuties/stream')
 const {
   FoundProcessOnPort,
   Pid,
   KilledProcess
-} = require('@cuties/process');
+} = require('@cuties/process')
 const {
   HasOwnProperty
-} = require('@cuties/object');
+} = require('@cuties/object')
 const {
   CreatedAgentConnection,
   ClosedServer,
@@ -33,49 +33,48 @@ const {
   HttpRequest,
   EndedRequest,
   SocketsOfAgent
-} = require('./../../index');
+} = require('./../../index')
 const {
   FakeServer
-} = require('./../../fake');
+} = require('./../../fake')
 
-const agent = new Agent({ keepAlive: true });
-const port = 8001;
-const hostname = '127.0.0.1';
+const agent = new Agent({ keepAlive: true })
+const port = 8001
+const hostname = '127.0.0.1'
 const options = {
   hostname: hostname,
   port: port,
   path: '/',
   method: 'GET',
   agent: agent
-};
+}
 
 class GeneratedRequestCallback extends AsyncObject {
-
-  constructor(agent, socket, server, key) {
-    super(agent, socket, server, key);
+  constructor (agent, socket, server, key) {
+    super(agent, socket, server, key)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (agent, socket, server, key) => {
       return (res) => {
-        new EqualAssertion(
+        new StrictEqualAssertion(
           new HasOwnProperty(
             new SocketsOfAgent(agent), key
           ), true
         ).after(
           new DestroyedAgent(agent).after(
-            new EqualAssertion(
+            new StrictEqualAssertion(
               new HasOwnProperty(
                 new SocketsOfAgent(agent), key
-              ), true 
-              /* 
+              ), true
+              /*
                 It's strange behavior. But DestroyedAgent works because connection don't hang.
                 If you try this test without DestroyedAgent, the test will run a long time.
               */
             ).after(
               new DestroyedStream(socket).after(
                 new ClosedServer(server).after(
-                  new EqualAssertion(
+                  new StrictEqualAssertion(
                     new HasOwnProperty(
                       new SocketsOfAgent(agent), key
                     ), false
@@ -84,11 +83,10 @@ class GeneratedRequestCallback extends AsyncObject {
               )
             )
           )
-        ).call();
+        ).call()
       }
     }
   }
-
 }
 
 new KilledProcess(
@@ -100,7 +98,7 @@ new KilledProcess(
     new Assertion(
       new Is(
         new CreatedAgentConnection(
-          agent, {port: port}
+          agent, { port: port }
         ).as('socket'), Socket
       )
     ).after(
@@ -113,4 +111,4 @@ new KilledProcess(
       )
     )
   )
-).call();
+).call()

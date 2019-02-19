@@ -1,21 +1,19 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is object
 class OptionsWithAgent extends AsyncObject {
-
-  constructor(options, agent) {
-    super(options, agent);
+  constructor (options, agent) {
+    super(options, agent)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (options, agent) => {
-      options.agent = agent;
-      return options;
+      options.agent = agent
+      return options
     }
   }
-
 }
 
-module.exports = OptionsWithAgent;
+module.exports = OptionsWithAgent

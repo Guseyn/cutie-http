@@ -1,21 +1,19 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is message
 class IncomingMessageWithCloseEvent extends AsyncObject {
-
-  constructor(message, event) {
-    super(message, event);
+  constructor (message, event) {
+    super(message, event)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (message, event) => {
-      message.on('close', event);
-      return message;
-    };
+      message.on('close', event)
+      return message
+    }
   }
-
 }
 
-module.exports = IncomingMessageWithCloseEvent;
+module.exports = IncomingMessageWithCloseEvent

@@ -1,21 +1,19 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is message
 class DestroyedIncomingMessage extends AsyncObject {
-
-  constructor(message, error) {
-    super(message, error);
+  constructor (message, error) {
+    super(message, error)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (message, error) => {
-      message.destroy(error);
-      return message;
-    };
+      message.destroy(error)
+      return message
+    }
   }
-
 }
 
-module.exports = DestroyedIncomingMessage;
+module.exports = DestroyedIncomingMessage

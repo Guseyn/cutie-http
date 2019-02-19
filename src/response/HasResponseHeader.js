@@ -1,20 +1,18 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is boolean
 class HasResponseHeader extends AsyncObject {
-
-  constructor(response, name) {
-    super(response, name);
+  constructor (response, name) {
+    super(response, name)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (response, name) => {
-      return response.hasHeader(name);
-    };
+      return response.hasHeader(name)
+    }
   }
-
 }
 
-module.exports = HasResponseHeader;
+module.exports = HasResponseHeader

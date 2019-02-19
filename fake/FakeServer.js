@@ -26,6 +26,6 @@ module.exports = (port, host, event) => {
   return new ListeningServer(
     new CreatedHttpServer(
       event || new RequestResponseEvent()
-    ), port || 8124, host || '127.0.0.1'
+    ), port, '127.0.0.1'
   );
 }

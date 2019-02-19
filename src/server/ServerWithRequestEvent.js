@@ -1,22 +1,20 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is server
 class ServerWithRequestEvent extends AsyncObject {
-
-  constructor(server, event) {
-    super(server, event);
+  constructor (server, event) {
+    super(server, event)
   }
 
   // event is an Event with definedBody(request, response)
-  definedSyncCall() {
+  definedSyncCall () {
     return (server, event) => {
-      server.on('request', event);
-      return server;
-    };
+      server.on('request', event)
+      return server
+    }
   }
-
 }
 
-module.exports = ServerWithRequestEvent;
+module.exports = ServerWithRequestEvent

@@ -2,30 +2,27 @@
 
 const {
   Agent
-} = require('http');
+} = require('http')
 const {
   Socket
-} = require('net');
+} = require('net')
 const {
-  as, AsyncObject, Event
-} = require('@cuties/cutie');
+  as, AsyncObject
+} = require('@cuties/cutie')
 const {
-  Assertion, EqualAssertion
-} = require('@cuties/assert');
+  Assertion
+} = require('@cuties/assert')
 const {
   Is
-} = require('@cuties/is');
+} = require('@cuties/is')
 const {
   DestroyedStream
-} = require('@cuties/stream');
+} = require('@cuties/stream')
 const {
   FoundProcessOnPort,
   Pid,
   KilledProcess
-} = require('@cuties/process');
-const {
-  HasOwnProperty
-} = require('@cuties/object');
+} = require('@cuties/process')
 const {
   CreatedAgentConnection,
   ClosedServer,
@@ -33,40 +30,38 @@ const {
   HttpRequest,
   EndedRequest,
   ReusedSocketOfAgent
-} = require('./../../index');
+} = require('./../../index')
 const {
   FakeServer
-} = require('./../../fake');
+} = require('./../../fake')
 
-const agent = new Agent({ keepAlive: true });
-const port = 8007;
-const hostname = '127.0.0.1';
+const agent = new Agent({ keepAlive: true })
+const port = 8007
+const hostname = '127.0.0.1'
 const options = {
   hostname: hostname,
   port: port,
   path: '/',
   method: 'GET',
   agent: agent
-};
+}
 
 class GeneratedRequestCallback extends AsyncObject {
-
-  constructor(agent, socket, server) {
-    super(agent, socket, server);
+  constructor (agent, socket, server) {
+    super(agent, socket, server)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (agent, socket, server) => {
       return (res) => {
         new DestroyedAgent(agent).after(
           new DestroyedStream(socket).after(
             new ClosedServer(server)
           )
-        ).call();
+        ).call()
       }
     }
   }
-
 }
 
 new KilledProcess(
@@ -78,7 +73,7 @@ new KilledProcess(
     new Assertion(
       new Is(
         new CreatedAgentConnection(
-          agent, {port: port}
+          agent, { port: port }
         ).as('socket'), Socket
       )
     ).after(
@@ -98,4 +93,4 @@ new KilledProcess(
       )
     )
   )
-).call();
+).call()

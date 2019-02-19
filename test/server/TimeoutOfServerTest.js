@@ -2,15 +2,15 @@
 
 const {
   as, AsyncObject, Event
-}  = require('@cuties/cutie');
+} = require('@cuties/cutie')
 const {
-  EqualAssertion
-} = require('@cuties/assert');
+  StrictEqualAssertion
+} = require('@cuties/assert')
 const {
   FoundProcessOnPort,
   Pid,
   KilledProcess
-} = require('@cuties/process');
+} = require('@cuties/process')
 const {
   TimeoutOfServer,
   ServerWithTimeout,
@@ -18,44 +18,41 @@ const {
   EndedRequest,
   EndedResponse,
   ClosedServer
-} = require('./../../index');
+} = require('./../../index')
 const {
   FakeServer
-} = require('./../../fake');
+} = require('./../../fake')
 
-const port = 8085;
-const hostname = '127.0.0.1';
+const port = 8085
+const hostname = '127.0.0.1'
 const options = {
   hostname: hostname,
   port: port,
   path: '/',
   method: 'GET'
-};
+}
 
 class RequestResponseEvent extends Event {
-
-  constructor() {
-    super();
+  constructor () {
+    super()
   }
 
-  definedBody(req, res) {
+  definedBody (req, res) {
     new EndedResponse(
       res, 'fake response'
-    ).call();
+    ).call()
   }
-
 }
 
 class GeneratedRequestCallback extends AsyncObject {
-
-  constructor(server) {
-    super(server);
+  constructor (server) {
+    super(server)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (server) => {
       return (res) => {
-        new EqualAssertion(
+        new StrictEqualAssertion(
           new TimeoutOfServer(
             new ServerWithTimeout(
               server, 100, () => {}
@@ -63,11 +60,10 @@ class GeneratedRequestCallback extends AsyncObject {
           ), 100
         ).after(
           new ClosedServer(server)
-        ).call();
+        ).call()
       }
     }
   }
-
 }
 
 new KilledProcess(
@@ -86,4 +82,4 @@ new KilledProcess(
       )
     )
   )
-).call();
+).call()

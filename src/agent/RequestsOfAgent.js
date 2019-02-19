@@ -1,20 +1,18 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is object
 class RequestsOfAgent extends AsyncObject {
-
-  constructor(agent) {
-    super(agent);
+  constructor (agent) {
+    super(agent)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (agent) => {
-      return agent.requests;
-    };
+      return agent.requests
+    }
   }
-
 }
 
-module.exports = RequestsOfAgent;
+module.exports = RequestsOfAgent

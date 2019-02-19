@@ -4,7 +4,8 @@
   "description": "Cutie extension for http module in Node",
   "main": "index.js",
   "scripts": {
-    "test": "node test-executor"
+    "test": "node test-executor",
+    "build": "node build"
   },
   "repository": {
     "type": "git",
@@ -16,19 +17,28 @@
     "oop"
   ],
   "dependencies": {
-    "@cuties/assert": "1.1.5",
-    "@cuties/buffer": "^1.1.1",
-    "@cuties/cutie": "1.4.4",
-    "@cuties/is": "1.0.8",
-    "@cuties/object": "1.0.4",
-    "@cuties/process": "1.1.0",
-    "@cuties/stream": "1.1.1",
-    "test-executor": "1.1.2"
+    "@cuties/assert": "^1.1.11",
+    "@cuties/buffer": "^1.1.4",
+    "@cuties/cutie": "^1.6.8",
+    "@cuties/is": "^1.0.14",
+    "@cuties/object": "^1.0.10",
+    "@cuties/process": "^1.1.4",
+    "@cuties/stream": "^1.1.4",
+    "@cuties/wall": "^1.0.19",
+    "test-executor": "^1.1.34"
   },
   "author": "guseyn",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Guseyn/cutie-http/issues"
   },
-  "homepage": "https://github.com/Guseyn/cutie-http#readme"
+  "homepage": "https://github.com/Guseyn/cutie-http#readme",
+  "devDependencies": {
+    "eslint": "^5.14.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
 }

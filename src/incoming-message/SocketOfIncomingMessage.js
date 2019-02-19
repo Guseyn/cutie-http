@@ -1,20 +1,18 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is socket
 class SocketOfIncomingMessage extends AsyncObject {
-
-  constructor(message) {
-    super(message);
+  constructor (message) {
+    super(message)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (message) => {
-      return message.socket;
-    };
+      return message.socket
+    }
   }
-
 }
 
-module.exports = SocketOfIncomingMessage;
+module.exports = SocketOfIncomingMessage

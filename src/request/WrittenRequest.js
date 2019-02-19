@@ -1,25 +1,23 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is request
 class WrittenRequest extends AsyncObject {
-
-  constructor(request, chunk, encoding) {
-    super(request, chunk, encoding || 'utf8');
+  constructor (request, chunk, encoding) {
+    super(request, chunk, encoding || 'utf8')
   }
 
-  definedAsyncCall() {
+  definedAsyncCall () {
     return (request, chunk, encoding, callback) => {
-      request.write(chunk, encoding, callback);
-      this.request = request;
-    };
+      request.write(chunk, encoding, callback)
+      this.request = request
+    }
   }
 
-    onResult(result) {
-      return this.request;
-    }
-
+  onResult (result) {
+    return this.request
+  }
 }
 
-module.exports = WrittenRequest;
+module.exports = WrittenRequest

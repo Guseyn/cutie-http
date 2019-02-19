@@ -1,20 +1,18 @@
 'use strict'
 
-const AsyncObject = require('@cuties/cutie').AsyncObject;
+const AsyncObject = require('@cuties/cutie').AsyncObject
 
 // Represented result is number
 class TimeoutOfServer extends AsyncObject {
-
-  constructor(server) {
-    super(server);
+  constructor (server) {
+    super(server)
   }
 
-  definedSyncCall() {
+  definedSyncCall () {
     return (server) => {
-      return server.timeout;
-    };
+      return server.timeout
+    }
   }
-
 }
 
-module.exports = TimeoutOfServer;
+module.exports = TimeoutOfServer
