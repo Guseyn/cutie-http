@@ -13,11 +13,6 @@ const {
   Is
 } = require('@cuties/is')
 const {
-  FoundProcessOnPort,
-  Pid,
-  KilledProcess
-} = require('@cuties/process')
-const {
   RequestWithTimeoutEvent,
   HttpRequest,
   EndedRequest,
@@ -60,24 +55,18 @@ class TimeoutEvent extends Event {
   }
 }
 
-new KilledProcess(
-  new Pid(
-    new FoundProcessOnPort(port)
-  ), 'SIGHUP'
-).after(
-  FakeServer(port).as('server').after(
-    new Assertion(
-      new Is(
-        new RequestWithTimeoutEvent(
-          new EndedRequest(
-            new HttpRequest(
-              options, new GeneratedRequestCallback(
-                as('server')
-              )
+FakeServer(port).as('server').after(
+  new Assertion(
+    new Is(
+      new RequestWithTimeoutEvent(
+        new EndedRequest(
+          new HttpRequest(
+            options, new GeneratedRequestCallback(
+              as('server')
             )
-          ), new TimeoutEvent()
-        ), ClientRequest
-      )
+          )
+        ), new TimeoutEvent()
+      ), ClientRequest
     )
   )
 ).call()

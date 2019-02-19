@@ -10,11 +10,6 @@ const {
   IsNumber
 } = require('@cuties/is')
 const {
-  FoundProcessOnPort,
-  Pid,
-  KilledProcess
-} = require('@cuties/process')
-const {
   ClosedServer,
   ResponseFromHttpRequest,
   ResponseStatusCode
@@ -32,20 +27,14 @@ const options = {
   method: 'GET'
 }
 
-new KilledProcess(
-  new Pid(
-    new FoundProcessOnPort(port)
-  ), 'SIGHUP'
-).after(
-  FakeServer(port).as('server').after(
-    new Assertion(
-      new IsNumber(
-        new ResponseStatusCode(
-          new ResponseFromHttpRequest(options, '{requestBody}')
-        )
+FakeServer(port).as('server').after(
+  new Assertion(
+    new IsNumber(
+      new ResponseStatusCode(
+        new ResponseFromHttpRequest(options, '{requestBody}')
       )
-    ).after(
-      new ClosedServer(as('server'))
     )
+  ).after(
+    new ClosedServer(as('server'))
   )
 ).call()
