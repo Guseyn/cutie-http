@@ -7,11 +7,6 @@ const {
   StrictEqualAssertion
 } = require('@cuties/assert')
 const {
-  FoundProcessOnPort,
-  Pid,
-  KilledProcess
-} = require('@cuties/process')
-const {
   HasResponseHeader,
   ResponseWithHeader,
   ResponseWithRemovedHeader,
@@ -65,19 +60,13 @@ class GeneratedRequestCallback extends AsyncObject {
   }
 }
 
-new KilledProcess(
-  new Pid(
-    new FoundProcessOnPort(port)
-  ), 'SIGHUP'
-).after(
-  FakeServer(
-    port, hostname, new RequestResponseEvent()
-  ).as('server').after(
-    new EndedRequest(
-      new HttpRequest(
-        options, new GeneratedRequestCallback(
-          as('server')
-        )
+FakeServer(
+  port, hostname, new RequestResponseEvent()
+).as('server').after(
+  new EndedRequest(
+    new HttpRequest(
+      options, new GeneratedRequestCallback(
+        as('server')
       )
     )
   )

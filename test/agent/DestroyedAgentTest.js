@@ -19,11 +19,6 @@ const {
   DestroyedStream
 } = require('@cuties/stream')
 const {
-  FoundProcessOnPort,
-  Pid,
-  KilledProcess
-} = require('@cuties/process')
-const {
   HasOwnProperty
 } = require('@cuties/object')
 const {
@@ -89,24 +84,18 @@ class GeneratedRequestCallback extends AsyncObject {
   }
 }
 
-new KilledProcess(
-  new Pid(
-    new FoundProcessOnPort(port)
-  ), 'SIGHUP'
-).after(
-  FakeServer(port).as('server').after(
-    new Assertion(
-      new Is(
-        new CreatedAgentConnection(
-          agent, { port: port }
-        ).as('socket'), Socket
-      )
-    ).after(
-      new EndedRequest(
-        new HttpRequest(
-          options, new GeneratedRequestCallback(
-            agent, as('socket'), as('server'), `${hostname}:${port}:`
-          )
+FakeServer(port).as('server').after(
+  new Assertion(
+    new Is(
+      new CreatedAgentConnection(
+        agent, { port: port }
+      ).as('socket'), Socket
+    )
+  ).after(
+    new EndedRequest(
+      new HttpRequest(
+        options, new GeneratedRequestCallback(
+          agent, as('socket'), as('server'), `${hostname}:${port}:`
         )
       )
     )

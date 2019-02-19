@@ -10,11 +10,6 @@ const {
   AreBuffersEqual
 } = require('@cuties/buffer')
 const {
-  FoundProcessOnPort,
-  Pid,
-  KilledProcess
-} = require('@cuties/process')
-const {
   ClosedServer,
   ResponseFromHttpGetRequest,
   ResponseBody
@@ -32,21 +27,15 @@ const options = {
   method: 'GET'
 }
 
-new KilledProcess(
-  new Pid(
-    new FoundProcessOnPort(port)
-  ), 'SIGHUP'
-).after(
-  FakeServer(port).as('server').after(
-    new Assertion(
-      new AreBuffersEqual(
-        new ResponseBody(
-          new ResponseFromHttpGetRequest(options)
-        ),
-        Buffer.from('fake response')
-      )
-    ).after(
-      new ClosedServer(as('server'))
+FakeServer(port).as('server').after(
+  new Assertion(
+    new AreBuffersEqual(
+      new ResponseBody(
+        new ResponseFromHttpGetRequest(options)
+      ),
+      Buffer.from('fake response')
     )
+  ).after(
+    new ClosedServer(as('server'))
   )
 ).call()

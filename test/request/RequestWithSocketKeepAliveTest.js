@@ -13,11 +13,6 @@ const {
   Is
 } = require('@cuties/is')
 const {
-  FoundProcessOnPort,
-  Pid,
-  KilledProcess
-} = require('@cuties/process')
-const {
   RequestWithSocketKeepAlive,
   HttpRequest,
   EndedRequest,
@@ -50,24 +45,18 @@ class GeneratedRequestCallback extends AsyncObject {
   }
 }
 
-new KilledProcess(
-  new Pid(
-    new FoundProcessOnPort(port)
-  ), 'SIGHUP'
-).after(
-  FakeServer(port).as('server').after(
-    new Assertion(
-      new Is(
-        new RequestWithSocketKeepAlive(
-          new EndedRequest(
-            new HttpRequest(
-              options, new GeneratedRequestCallback(
-                as('server')
-              )
+FakeServer(port).as('server').after(
+  new Assertion(
+    new Is(
+      new RequestWithSocketKeepAlive(
+        new EndedRequest(
+          new HttpRequest(
+            options, new GeneratedRequestCallback(
+              as('server')
             )
-          ), true, 100
-        ), ClientRequest
-      )
+          )
+        ), true, 100
+      ), ClientRequest
     )
   )
 ).call()

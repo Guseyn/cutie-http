@@ -22,7 +22,6 @@
     "@cuties/cutie": "^1.6.8",
     "@cuties/is": "^1.0.14",
     "@cuties/object": "^1.0.10",
-    "@cuties/process": "^1.1.4",
     "@cuties/stream": "^1.1.4",
     "@cuties/wall": "^1.0.19",
     "test-executor": "^1.1.34"

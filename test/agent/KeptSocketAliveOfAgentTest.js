@@ -19,11 +19,6 @@ const {
   DestroyedStream
 } = require('@cuties/stream')
 const {
-  FoundProcessOnPort,
-  Pid,
-  KilledProcess
-} = require('@cuties/process')
-const {
   CreatedAgentConnection,
   ClosedServer,
   KeptSocketAliveOfAgent
@@ -35,29 +30,23 @@ const {
 const agent = new Agent({ keepAlive: false })
 const port = 8002
 
-new KilledProcess(
-  new Pid(
-    new FoundProcessOnPort(port)
-  ), 'SIGHUP'
-).after(
-  FakeServer(port).as('server').after(
+FakeServer(port).as('server').after(
+  new Assertion(
+    new Is(
+      new CreatedAgentConnection(
+        agent, { port: port }
+      ).as('socket'), Socket
+    )
+  ).after(
     new Assertion(
       new Is(
-        new CreatedAgentConnection(
-          agent, { port: port }
-        ).as('socket'), Socket
+        new KeptSocketAliveOfAgent(
+          agent, as('socket')
+        ), Socket
       )
     ).after(
-      new Assertion(
-        new Is(
-          new KeptSocketAliveOfAgent(
-            agent, as('socket')
-          ), Socket
-        )
-      ).after(
-        new DestroyedStream(as('socket')).after(
-          new ClosedServer(as('server'))
-        )
+      new DestroyedStream(as('socket')).after(
+        new ClosedServer(as('server'))
       )
     )
   )

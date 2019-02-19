@@ -13,11 +13,6 @@ const {
   Is
 } = require('@cuties/is')
 const {
-  FoundProcessOnPort,
-  Pid,
-  KilledProcess
-} = require('@cuties/process')
-const {
   RequestWithConnectEvent,
   HttpRequest,
   EndedRequest,
@@ -60,24 +55,18 @@ class ConnectEvent extends Event {
   }
 }
 
-new KilledProcess(
-  new Pid(
-    new FoundProcessOnPort(port)
-  ), 'SIGHUP'
-).after(
-  FakeServer(port).as('server').after(
-    new Assertion(
-      new Is(
-        new RequestWithConnectEvent(
-          new EndedRequest(
-            new HttpRequest(
-              options, new GeneratedRequestCallback(
-                as('server')
-              )
+FakeServer(port).as('server').after(
+  new Assertion(
+    new Is(
+      new RequestWithConnectEvent(
+        new EndedRequest(
+          new HttpRequest(
+            options, new GeneratedRequestCallback(
+              as('server')
             )
-          ), new ConnectEvent()
-        ), ClientRequest
-      )
+          )
+        ), new ConnectEvent()
+      ), ClientRequest
     )
   )
 ).call()
