@@ -10,8 +10,8 @@ class ClosedServer extends AsyncObject {
 
   definedAsyncCall () {
     return (server, callback) => {
-      server.close(callback)
       this.server = server
+      server.close(callback)
     }
   }
 

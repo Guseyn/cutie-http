@@ -10,8 +10,8 @@ class EndedResponse extends AsyncObject {
 
   definedAsyncCall () {
     return (response, data, encoding, callback) => {
-      response.end(data, encoding, callback)
       this.response = response
+      response.end(data, encoding, callback)
     }
   }
 
