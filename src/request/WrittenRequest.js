@@ -10,8 +10,8 @@ class WrittenRequest extends AsyncObject {
 
   definedAsyncCall () {
     return (request, chunk, encoding, callback) => {
-      request.write(chunk, encoding, callback)
       this.request = request
+      request.write(chunk, encoding, callback)
     }
   }
 

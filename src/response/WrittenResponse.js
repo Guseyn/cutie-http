@@ -10,8 +10,8 @@ class WrittenResponse extends AsyncObject {
 
   definedAsyncCall () {
     return (response, chunk, encoding, callback) => {
-      response.write(chunk, encoding, callback)
       this.response = response
+      response.write(chunk, encoding, callback)
     }
   }
 
