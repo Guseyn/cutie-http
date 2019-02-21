@@ -8,7 +8,7 @@ class MethodOfIncomingMessage extends AsyncObject {
     super(message)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (message) => {
       return message.method
     }

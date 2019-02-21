@@ -8,7 +8,7 @@ class ResponseWithTimeout extends AsyncObject {
     super(response, msecs, callback)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (response, msecs, callback) => {
       return response.setTimeout(msecs, callback)
     }

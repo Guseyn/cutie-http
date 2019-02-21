@@ -8,7 +8,7 @@ class StatusMessageOfResponse extends AsyncObject {
     super(response)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (response) => {
       return response.statusMessage
     }

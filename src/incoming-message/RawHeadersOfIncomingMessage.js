@@ -8,7 +8,7 @@ class RawHeadersOfIncomingMessage extends AsyncObject {
     super(message)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (message) => {
       return message.rawHeaders
     }

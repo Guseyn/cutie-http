@@ -8,7 +8,7 @@ class HttpVersionOfIncomingVersion extends AsyncObject {
     super(message)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (message) => {
       return message.httpVersion
     }

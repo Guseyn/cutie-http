@@ -8,7 +8,7 @@ class EndedReqest extends AsyncObject {
     super(request, data, encoding)
   }
 
-  definedAsyncCall () {
+  asyncCall () {
     return (request, data, encoding, callback) => {
       this.request = request
       request.end(data, encoding, callback)

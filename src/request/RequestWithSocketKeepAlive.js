@@ -8,7 +8,7 @@ class RequestWithSockedKeepAlive extends AsyncObject {
     super(request, enable, initialDelay)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (request, enable, initialDelay) => {
       request.setSocketKeepAlive(enable, initialDelay)
       return request

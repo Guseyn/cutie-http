@@ -8,7 +8,7 @@ class ResponseWithFinishEvent extends AsyncObject {
     super(response, event)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (response, event) => {
       response.on('finish', event)
       return response

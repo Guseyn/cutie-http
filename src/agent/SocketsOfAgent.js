@@ -8,7 +8,7 @@ class SocketsOfAgent extends AsyncObject {
     super(agent)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (agent) => {
       return agent.sockets
     }

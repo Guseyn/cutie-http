@@ -8,7 +8,7 @@ class HeaderNamesOfResponse extends AsyncObject {
     super(response)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (response) => {
       return response.getHeaderNames()
     }

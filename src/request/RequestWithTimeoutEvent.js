@@ -8,8 +8,8 @@ class RequestWithTimeoutEvent extends AsyncObject {
     super(request, event)
   }
 
-  // event is an Event with definedBody()
-  definedSyncCall () {
+  // event is an Event with body()
+  syncCall () {
     return (request, event) => {
       request.on('timeout', event)
       return request

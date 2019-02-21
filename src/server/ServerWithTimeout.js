@@ -8,7 +8,7 @@ class ServerWithTimeout extends AsyncObject {
     super(server, msecs, callback)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (server, msecs, callback) => {
       return server.setTimeout(msecs, callback)
     }

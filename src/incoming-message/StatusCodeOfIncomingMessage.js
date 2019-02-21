@@ -8,7 +8,7 @@ class StatusCodeOfIncomingMessage extends AsyncObject {
     super(message)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (message) => {
       return message.statusCode
     }

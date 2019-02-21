@@ -8,8 +8,8 @@ class ServerWithCheckExpectationEvent extends AsyncObject {
     super(server, event)
   }
 
-  // event is an Event with definedBody(req, res)
-  definedSyncCall () {
+  // event is an Event with body(req, res)
+  syncCall () {
     return (server, event) => {
       server.on('checkExpectation', event)
       return server

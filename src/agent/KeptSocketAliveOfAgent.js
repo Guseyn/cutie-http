@@ -8,7 +8,7 @@ class KeptSocketAliveOfAgent extends AsyncObject {
     super(agent, socket)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (agent, socket) => {
       agent.keepSocketAlive(socket)
       return socket

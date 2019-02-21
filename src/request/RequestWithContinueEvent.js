@@ -8,7 +8,7 @@ class RequestWithContinueEvent extends AsyncObject {
     super(request, event)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (request, event) => {
       request.on('continue', event)
       return request

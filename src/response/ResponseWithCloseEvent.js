@@ -8,7 +8,7 @@ class ResponseWithCloseEvent extends AsyncObject {
     super(response, event)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (response, event) => {
       response.on('close', event)
       return response

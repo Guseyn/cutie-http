@@ -8,7 +8,7 @@ class IncomingMessageWithCloseEvent extends AsyncObject {
     super(message, event)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (message, event) => {
       message.on('close', event)
       return message

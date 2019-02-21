@@ -8,7 +8,7 @@ class ResponseWithAddedTrailers extends AsyncObject {
     super(response, headers)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (response, headers) => {
       response.addTrailers(headers)
       return response

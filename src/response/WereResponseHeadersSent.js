@@ -8,7 +8,7 @@ class HaveResponseHeadersSent extends AsyncObject {
     super(response)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (response) => {
       return response.headersSent
     }

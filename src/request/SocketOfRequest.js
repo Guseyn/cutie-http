@@ -8,7 +8,7 @@ class SocketOfRequest extends AsyncObject {
     super(request)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (request) => {
       return request.socket
     }

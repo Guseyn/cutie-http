@@ -8,8 +8,8 @@ class IncomingMessageWithAbortedEvent extends AsyncObject {
     super(message, event)
   }
 
-  // event is an Event with definedBody()
-  definedSyncCall () {
+  // event is an Event with body()
+  syncCall () {
     return (message, event) => {
       message.on('aborted', event)
       return message

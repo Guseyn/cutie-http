@@ -8,8 +8,8 @@ class ServerWithCloseEvent extends AsyncObject {
     super(server, event)
   }
 
-  // event is an Event with definedBody()
-  definedSyncCall () {
+  // event is an Event with body()
+  syncCall () {
     return (server, event) => {
       server.on('close', event)
       return server

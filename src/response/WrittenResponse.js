@@ -8,7 +8,7 @@ class WrittenResponse extends AsyncObject {
     super(response, chunk, encoding || 'utf8')
   }
 
-  definedAsyncCall () {
+  asyncCall () {
     return (response, chunk, encoding, callback) => {
       this.response = response
       response.write(chunk, encoding, callback)

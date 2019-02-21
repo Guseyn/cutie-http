@@ -8,7 +8,7 @@ class MaxSocketsOfAgent extends AsyncObject {
     super(agent)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (agent) => {
       return agent.maxSockets
     }

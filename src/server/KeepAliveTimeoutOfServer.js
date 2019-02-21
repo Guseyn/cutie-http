@@ -8,7 +8,7 @@ class KeepAliveTimeoutOfServer extends AsyncObject {
     super(server)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (server) => {
       return server.keepAliveTimeout
     }

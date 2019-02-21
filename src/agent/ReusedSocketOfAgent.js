@@ -8,7 +8,7 @@ class ReusedSocketOfAgent extends AsyncObject {
     super(agent, socket, request)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (agent, socket, request) => {
       agent.reuseSocket(socket, request)
       return socket

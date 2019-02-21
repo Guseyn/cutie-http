@@ -8,7 +8,7 @@ class RequestWithHeader extends AsyncObject {
     super(request, name, value)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (request, name, value) => {
       request.setHeader(name, value)
       return request

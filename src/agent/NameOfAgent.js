@@ -8,7 +8,7 @@ class NameOfAgent extends AsyncObject {
     super(agent, options)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (agent, options) => {
       return agent.getName(options)
     }

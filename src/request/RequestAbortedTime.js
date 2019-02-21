@@ -8,7 +8,7 @@ class RequestAbortedTime extends AsyncObject {
     super(request)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (request) => {
       return request.aborted
     }

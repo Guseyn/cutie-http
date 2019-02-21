@@ -8,7 +8,7 @@ class CreatedOptions extends AsyncObject {
     super(...args)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (...args) => {
       let options = {}
       if (args.length % 2 !== 0) {

@@ -8,7 +8,7 @@ class RequestWithNoDelay extends AsyncObject {
     super(request, noDelay)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (request, noDelay) => {
       request.setNoDelay(noDelay)
       return request
