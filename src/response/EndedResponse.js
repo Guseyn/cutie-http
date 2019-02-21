@@ -8,7 +8,7 @@ class EndedResponse extends AsyncObject {
     super(response, data, encoding || 'utf8')
   }
 
-  definedAsyncCall () {
+  asyncCall () {
     return (response, data, encoding, callback) => {
       this.response = response
       response.end(data, encoding, callback)

@@ -8,7 +8,7 @@ class ResponseWithHeader extends AsyncObject {
     super(response, name, value)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (response, name, value) => {
       response.setHeader(name, value)
       return response

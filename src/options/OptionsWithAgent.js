@@ -8,7 +8,7 @@ class OptionsWithAgent extends AsyncObject {
     super(options, agent)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (options, agent) => {
       options.agent = agent
       return options

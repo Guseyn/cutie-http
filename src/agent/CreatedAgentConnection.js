@@ -8,7 +8,7 @@ class CreatedAgentConnection extends AsyncObject {
     super(agent, options)
   }
 
-  definedAsyncCall () {
+  asyncCall () {
     return (agent, options, callback) => {
       this.socket = agent.createConnection(options, callback)
     }

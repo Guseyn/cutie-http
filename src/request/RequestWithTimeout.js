@@ -8,7 +8,7 @@ class RequestWithTimeout extends AsyncObject {
     super(request, timeout, callback)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (request, timeout, callback) => {
       return request.setTimeout(timeout, callback)
     }

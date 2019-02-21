@@ -8,7 +8,7 @@ class WrittenContinueResponse extends AsyncObject {
     super(response)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (response) => {
       response.writeContinue()
       return response

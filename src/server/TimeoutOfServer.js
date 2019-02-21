@@ -8,7 +8,7 @@ class TimeoutOfServer extends AsyncObject {
     super(server)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (server) => {
       return server.timeout
     }

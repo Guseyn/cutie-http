@@ -8,7 +8,7 @@ class RequestWithFlushedHeaders extends AsyncObject {
     super(request)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (request) => {
       request.flushHeaders()
       return request

@@ -8,8 +8,8 @@ class ServerWithUpgradeEvent extends AsyncObject {
     super(server, event)
   }
 
-  // event is an Event with definedBody(request, socket, head)
-  definedSyncCall () {
+  // event is an Event with body(request, socket, head)
+  syncCall () {
     return (server, event) => {
       server.on('upgrade', event)
       return server

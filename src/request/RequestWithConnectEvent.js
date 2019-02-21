@@ -8,7 +8,7 @@ class RequestWithConnectEvent extends AsyncObject {
     super(request, event)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (request, event) => {
       request.on('connect', event)
       return request

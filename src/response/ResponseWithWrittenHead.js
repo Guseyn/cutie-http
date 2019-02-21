@@ -8,7 +8,7 @@ class ResponseWithWrittenHead extends AsyncObject {
     super(response, statusCode, statusMessage, headers)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (response, statusCode, statusMessage, headers) => {
       response.writeHead(statusCode, statusMessage, headers)
       return response

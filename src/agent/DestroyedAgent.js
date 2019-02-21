@@ -8,7 +8,7 @@ class DestroyedAgent extends AsyncObject {
     super(agent)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (agent) => {
       agent.destroy()
       return agent

@@ -8,7 +8,7 @@ class IsResponseFinished extends AsyncObject {
     super(response)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (response) => {
       return response.finished
     }

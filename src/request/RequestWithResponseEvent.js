@@ -8,7 +8,7 @@ class RequestWithResponseEvent extends AsyncObject {
     super(request, event)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (request, event) => {
       request.on('response', event)
       return request

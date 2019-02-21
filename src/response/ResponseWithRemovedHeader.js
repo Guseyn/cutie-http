@@ -8,7 +8,7 @@ class ResponseWithRemovedHeader extends AsyncObject {
     super(response, name)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (response, name) => {
       response.removeHeader(name)
       return response

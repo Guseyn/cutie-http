@@ -8,7 +8,7 @@ class WrittenRequest extends AsyncObject {
     super(request, chunk, encoding || 'utf8')
   }
 
-  definedAsyncCall () {
+  asyncCall () {
     return (request, chunk, encoding, callback) => {
       this.request = request
       request.write(chunk, encoding, callback)

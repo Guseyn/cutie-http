@@ -8,7 +8,7 @@ class DestroyedIncomingMessage extends AsyncObject {
     super(message, error)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (message, error) => {
       message.destroy(error)
       return message

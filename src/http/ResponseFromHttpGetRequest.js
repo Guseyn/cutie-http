@@ -9,7 +9,7 @@ class ResponseDataFromHttpGetRequest extends AsyncObject {
     super(options)
   }
 
-  definedAsyncCall () {
+  asyncCall () {
     return (options, callback) => {
       return responseFromHttpGetRequest(options, callback)
     }

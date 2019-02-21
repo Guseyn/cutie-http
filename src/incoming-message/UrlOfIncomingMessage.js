@@ -8,7 +8,7 @@ class UrlOfIncomingMessage extends AsyncObject {
     super(message)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (message) => {
       return message.url
     }

@@ -8,8 +8,8 @@ class RequestWithUpgradeEvent extends AsyncObject {
     super(request, event)
   }
 
-  // event is an Event with definedBody(req, socket, head)
-  definedSyncCall () {
+  // event is an Event with body(req, socket, head)
+  syncCall () {
     return (request, event) => {
       request.on('upgrade', event)
       return request

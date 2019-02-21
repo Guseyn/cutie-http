@@ -8,7 +8,7 @@ class HasResponseHeader extends AsyncObject {
     super(response, name)
   }
 
-  definedSyncCall () {
+  syncCall () {
     return (response, name) => {
       return response.hasHeader(name)
     }
