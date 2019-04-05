@@ -4,7 +4,7 @@ const AsyncObject = require('@cuties/cutie').AsyncObject
 const responseFromHttpRequest = require('./../custom-calls/responseFromHttpRequest')
 
 // Represented result is {statusCode, headers, body}
-class ResponseDataFromHttpRequest extends AsyncObject {
+class ResponseFromHttpRequest extends AsyncObject {
   constructor (options, requestBody) {
     super(options, requestBody)
   }
@@ -16,4 +16,4 @@ class ResponseDataFromHttpRequest extends AsyncObject {
   }
 }
 
-module.exports = ResponseDataFromHttpRequest
+module.exports = ResponseFromHttpRequest
