@@ -1,10 +1,6 @@
 'use strict'
 
 const { ExecutedTests } = require('test-executor')
-
-'use strict'
-
-const { ExecutedTests } = require('test-executor')
 const testDirs = ['./test/agent', './test/http', './test/incoming-message', './test/options', './test/request', './test/response', './test/server']
 
 const executedTests = (curIndex = 0, curExecutedTests = new ExecutedTests(testDirs[0]), tree = curExecutedTests) => {
